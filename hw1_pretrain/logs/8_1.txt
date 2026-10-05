@@ -1,0 +1,88 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 11.8.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+{'output_dir': './output_dir/gpt2-1b-russian', 'optim': 'adamw_torch_fused', 'num_train_epochs': 1, 'per_device_train_batch_size': 4, 'save_steps': 100, 'save_total_limit': 2, 'learning_rate': 0.0003, 'weight_decay': 0.1, 'warmup_steps': 200, 'logging_steps': 1, 'eval_steps': 100, 'eval_strategy': 'steps', 'load_best_model_at_end': True, 'metric_for_best_model': 'eval_loss', 'bf16': False, 'tf32': True, 'gradient_checkpointing': False, 'gradient_accumulation_steps': 8, 'dataloader_num_workers': 4, 'torch_compile': False, 'report_to': 'none'}
+README.md: 0.00B [00:00, ?B/s]README.md: 131kB [00:00, 164MB/s]
+Resolving data files:   0% 0/21 [00:00<?, ?it/s]Resolving data files:  52% 11/21 [00:00<00:00, 50.94it/s]Resolving data files: 100% 21/21 [00:00<00:00, 74.82it/s]
+Downloading data:   0% 0/21 [00:00<?, ?files/s]
+20231101.ru/train-00000-of-00021.parquet:   0% 0.00/581M [00:00<?, ?B/s][A
+20231101.ru/train-00000-of-00021.parquet:  12% 67.1M/581M [00:03<00:25, 20.6MB/s][A
+20231101.ru/train-00000-of-00021.parquet:  46% 268M/581M [00:03<00:03, 97.9MB/s] [A
+20231101.ru/train-00000-of-00021.parquet:  69% 402M/581M [00:04<00:01, 102MB/s] [A
+20231101.ru/train-00000-of-00021.parquet: 100% 581M/581M [00:05<00:00, 166MB/s][A20231101.ru/train-00000-of-00021.parquet: 100% 581M/581M [00:08<00:00, 66.4MB/s]
+Downloading data:   5% 1/21 [00:09<03:05,  9.29s/files]
+20231101.ru/train-00001-of-00021.parquet:   0% 0.00/302M [00:00<?, ?B/s][A
+20231101.ru/train-00001-of-00021.parquet: 100% 302M/302M [00:10<00:00, 30.2MB/s][A20231101.ru/train-00001-of-00021.parquet: 100% 302M/302M [00:10<00:00, 28.3MB/s]
+Downloading data:  10% 2/21 [00:20<03:15, 10.31s/files]
+20231101.ru/train-00002-of-00021.parquet:   0% 0.00/250M [00:00<?, ?B/s][A
+20231101.ru/train-00002-of-00021.parquet:  54% 134M/250M [00:02<00:01, 66.8MB/s][A
+20231101.ru/train-00002-of-00021.parquet: 100% 250M/250M [00:02<00:00, 127MB/s] [A20231101.ru/train-00002-of-00021.parquet: 100% 250M/250M [00:02<00:00, 101MB/s]
+Downloading data:  14% 3/21 [00:23<02:05,  6.97s/files]
+20231101.ru/train-00003-of-00021.parquet:   0% 0.00/293M [00:00<?, ?B/s][A
+20231101.ru/train-00003-of-00021.parquet: 100% 293M/293M [00:02<00:00, 106MB/s][A20231101.ru/train-00003-of-00021.parquet: 100% 293M/293M [00:04<00:00, 62.9MB/s]
+Downloading data:  19% 4/21 [00:28<01:45,  6.19s/files]
+20231101.ru/train-00004-of-00021.parquet:   0% 0.00/248M [00:00<?, ?B/s][A
+20231101.ru/train-00004-of-00021.parquet: 100% 248M/248M [00:02<00:00, 123MB/s][A20231101.ru/train-00004-of-00021.parquet: 100% 248M/248M [00:04<00:00, 53.1MB/s]
+Downloading data:  24% 5/21 [00:33<01:32,  5.77s/files]
+20231101.ru/train-00005-of-00021.parquet:   0% 0.00/220M [00:00<?, ?B/s][A
+20231101.ru/train-00005-of-00021.parquet: 100% 220M/220M [00:02<00:00, 79.8MB/s][A20231101.ru/train-00005-of-00021.parquet: 100% 220M/220M [00:03<00:00, 60.5MB/s]
+Downloading data:  29% 6/21 [00:37<01:17,  5.16s/files]
+20231101.ru/train-00006-of-00021.parquet:   0% 0.00/195M [00:00<?, ?B/s][A
+20231101.ru/train-00006-of-00021.parquet: 100% 195M/195M [00:02<00:00, 97.2MB/s][A20231101.ru/train-00006-of-00021.parquet: 100% 195M/195M [00:02<00:00, 73.9MB/s]
+Downloading data:  33% 7/21 [00:40<01:02,  4.45s/files]
+20231101.ru/train-00007-of-00021.parquet:   0% 0.00/171M [00:00<?, ?B/s][A
+20231101.ru/train-00007-of-00021.parquet: 100% 171M/171M [00:02<00:00, 75.7MB/s][A20231101.ru/train-00007-of-00021.parquet: 100% 171M/171M [00:02<00:00, 65.1MB/s]
+Downloading data:  38% 8/21 [00:43<00:51,  3.99s/files]
+20231101.ru/train-00008-of-00021.parquet:   0% 0.00/208M [00:00<?, ?B/s][A
+20231101.ru/train-00008-of-00021.parquet:  32% 67.0M/208M [00:02<00:04, 33.4MB/s][A
+20231101.ru/train-00008-of-00021.parquet: 100% 208M/208M [00:09<00:00, 20.1MB/s] [A20231101.ru/train-00008-of-00021.parquet: 100% 208M/208M [00:09<00:00, 20.9MB/s]
+Downloading data:  43% 9/21 [00:53<01:11,  5.96s/files]
+20231101.ru/train-00009-of-00021.parquet:   0% 0.00/176M [00:00<?, ?B/s][A
+20231101.ru/train-00009-of-00021.parquet: 100% 176M/176M [00:02<00:00, 87.5MB/s][A20231101.ru/train-00009-of-00021.parquet: 100% 176M/176M [00:02<00:00, 86.0MB/s]
+Downloading data:  48% 10/21 [00:55<00:53,  4.86s/files]
+20231101.ru/train-00010-of-00021.parquet:   0% 0.00/179M [00:00<?, ?B/s][A
+20231101.ru/train-00010-of-00021.parquet: 100% 179M/179M [00:02<00:00, 79.4MB/s][A20231101.ru/train-00010-of-00021.parquet: 100% 179M/179M [00:02<00:00, 79.0MB/s]
+Downloading data:  52% 11/21 [00:58<00:41,  4.18s/files]
+20231101.ru/train-00011-of-00021.parquet:   0% 0.00/201M [00:00<?, ?B/s][A
+20231101.ru/train-00011-of-00021.parquet: 100% 201M/201M [00:02<00:00, 100MB/s][A20231101.ru/train-00011-of-00021.parquet: 100% 201M/201M [00:03<00:00, 60.6MB/s]
+Downloading data:  57% 12/21 [01:02<00:36,  4.02s/files]
+20231101.ru/train-00012-of-00021.parquet:   0% 0.00/197M [00:00<?, ?B/s][A
+20231101.ru/train-00012-of-00021.parquet: 100% 197M/197M [00:02<00:00, 97.9MB/s][A20231101.ru/train-00012-of-00021.parquet: 100% 197M/197M [00:02<00:00, 74.9MB/s]
+Downloading data:  62% 13/21 [01:05<00:29,  3.72s/files]
+20231101.ru/train-00013-of-00021.parquet:   0% 0.00/206M [00:00<?, ?B/s][A
+20231101.ru/train-00013-of-00021.parquet:  33% 67.0M/206M [00:02<00:04, 33.4MB/s][A
+20231101.ru/train-00013-of-00021.parquet: 100% 206M/206M [00:02<00:00, 112MB/s]  [A20231101.ru/train-00013-of-00021.parquet: 100% 206M/206M [00:02<00:00, 80.4MB/s]
+Downloading data:  67% 14/21 [01:08<00:24,  3.50s/files]
+20231101.ru/train-00014-of-00021.parquet:   0% 0.00/215M [00:00<?, ?B/s][A
+20231101.ru/train-00014-of-00021.parquet: 100% 215M/215M [00:08<00:00, 25.6MB/s][A20231101.ru/train-00014-of-00021.parquet: 100% 215M/215M [00:08<00:00, 25.6MB/s]
+Downloading data:  71% 15/21 [01:17<00:30,  5.10s/files]
+20231101.ru/train-00015-of-00021.parquet:   0% 0.00/219M [00:00<?, ?B/s][A
+20231101.ru/train-00015-of-00021.parquet: 100% 219M/219M [00:02<00:00, 97.2MB/s][A20231101.ru/train-00015-of-00021.parquet: 100% 219M/219M [00:02<00:00, 77.8MB/s]
+Downloading data:  76% 16/21 [01:20<00:22,  4.52s/files]
+20231101.ru/train-00016-of-00021.parquet:   0% 0.00/229M [00:00<?, ?B/s][A
+20231101.ru/train-00016-of-00021.parquet: 100% 229M/229M [00:02<00:00, 114MB/s][A20231101.ru/train-00016-of-00021.parquet: 100% 229M/229M [00:02<00:00, 85.3MB/s]
+Downloading data:  81% 17/21 [01:23<00:16,  4.07s/files]
+20231101.ru/train-00017-of-00021.parquet:   0% 0.00/210M [00:00<?, ?B/s][A
+20231101.ru/train-00017-of-00021.parquet: 100% 210M/210M [00:02<00:00, 105MB/s][A20231101.ru/train-00017-of-00021.parquet: 100% 210M/210M [00:02<00:00, 102MB/s]
+Downloading data:  86% 18/21 [01:25<00:10,  3.57s/files]
+20231101.ru/train-00018-of-00021.parquet:   0% 0.00/210M [00:00<?, ?B/s][A
+20231101.ru/train-00018-of-00021.parquet: 100% 210M/210M [00:02<00:00, 104MB/s][A20231101.ru/train-00018-of-00021.parquet: 100% 210M/210M [00:03<00:00, 65.1MB/s]
+Downloading data:  90% 19/21 [01:29<00:07,  3.57s/files]
+20231101.ru/train-00019-of-00021.parquet:   0% 0.00/187M [00:00<?, ?B/s][A
+20231101.ru/train-00019-of-00021.parquet:  72% 134M/187M [00:02<00:00, 66.8MB/s][A
+20231101.ru/train-00019-of-00021.parquet: 100% 187M/187M [00:02<00:00, 88.4MB/s][A20231101.ru/train-00019-of-00021.parquet: 100% 187M/187M [00:02<00:00, 70.0MB/s]
+Downloading data:  95% 20/21 [01:32<00:03,  3.41s/files]
+20231101.ru/train-00020-of-00021.parquet:   0% 0.00/182M [00:00<?, ?B/s][A
+20231101.ru/train-00020-of-00021.parquet: 100% 182M/182M [00:02<00:00, 90.7MB/s][A

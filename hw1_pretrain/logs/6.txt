@@ -1,0 +1,24 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 11.8.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+{'output_dir': './output_dir/gpt2-1b-russian', 'optim': 'adamw_torch_fused', 'num_train_epochs': 1, 'per_device_train_batch_size': 4, 'save_steps': 100, 'save_total_limit': 2, 'learning_rate': 0.0003, 'weight_decay': 0.01, 'warmup_steps': 200, 'logging_steps': 1, 'eval_steps': 100, 'eval_strategy': 'steps', 'load_best_model_at_end': True, 'metric_for_best_model': 'eval_loss', 'bf16': True, 'tf32': True, 'gradient_checkpointing': False, 'gradient_accumulation_steps': 8, 'dataloader_num_workers': 4, 'torch_compile': False, 'report_to': 'none', 'lr_scheduler_type': 'cosine'}
+README.md: 0.00B [00:00, ?B/s]README.md: 131kB [00:00, 151MB/s]
+Resolving data files:   0% 0/21 [00:00<?, ?it/s]Resolving data files:  52% 11/21 [00:00<00:00, 42.30it/s]Resolving data files:  76% 16/21 [00:01<00:00, 12.53it/s]Resolving data files:  90% 19/21 [00:01<00:00, 13.59it/s]Resolving data files: 100% 21/21 [00:01<00:00, 16.70it/s]
+Downloading data:   0% 0/21 [00:00<?, ?files/s]
+20231101.ru/train-00000-of-00021.parquet:   0% 0.00/581M [00:00<?, ?B/s][A
+20231101.ru/train-00000-of-00021.parquet:  12% 67.1M/581M [00:03<00:23, 22.3MB/s][A
+20231101.ru/train-00000-of-00021.parquet:  46% 268M/581M [00:03<00:03, 95.1MB/s] [A
+20231101.ru/train-00000-of-00021.parquet:  58% 335M/581M [00:04<00:02, 103MB/s] [A
+20231101.ru/train-00000-of-00021.parquet:  69% 402M/581M [00:04<00:01, 125MB/s][A
