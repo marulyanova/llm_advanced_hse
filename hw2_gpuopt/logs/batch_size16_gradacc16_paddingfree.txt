@@ -1,0 +1,60 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 11.8.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+tokenizer_config.json: 0.00B [00:00, ?B/s]tokenizer_config.json: 1.25kB [00:00, 7.44MB/s]
+vocab.json: 0.00B [00:00, ?B/s]vocab.json: 1.70MB [00:00, 15.5MB/s]vocab.json: 1.71MB [00:00, 15.5MB/s]
+merges.txt: 0.00B [00:00, ?B/s]merges.txt: 1.27MB [00:00, 86.2MB/s]
+special_tokens_map.json:   0% 0.00/574 [00:00<?, ?B/s]special_tokens_map.json: 100% 574/574 [00:00<00:00, 4.72MB/s]
+README.md: 0.00B [00:00, ?B/s]README.md: 131kB [00:00, 200MB/s]
+Resolving data files:   0% 0/21 [00:00<?, ?it/s]Resolving data files:  52% 11/21 [00:00<00:00, 43.72it/s]Resolving data files:  76% 16/21 [00:00<00:00, 16.88it/s]Resolving data files: 100% 21/21 [00:00<00:00, 25.37it/s]
+Подготовлено 5000/50500 статей
+Подготовлено 10000/50500 статей
+Подготовлено 15000/50500 статей
+Подготовлено 20000/50500 статей
+Подготовлено 25000/50500 статей
+Подготовлено 30000/50500 статей
+Подготовлено 35000/50500 статей
+Подготовлено 40000/50500 статей
+Подготовлено 45000/50500 статей
+Подготовлено 50000/50500 статей
+Saving the dataset (0/1 shards):   0% 0/244768 [00:00<?, ? examples/s]Saving the dataset (0/1 shards):  73% 179000/244768 [00:00<00:00, 1759862.96 examples/s]Saving the dataset (1/1 shards): 100% 244768/244768 [00:00<00:00, 1759862.96 examples/s]Saving the dataset (1/1 shards): 100% 244768/244768 [00:00<00:00, 1757160.22 examples/s]
+Saving the dataset (0/1 shards):   0% 0/2928 [00:00<?, ? examples/s]Saving the dataset (1/1 shards): 100% 2928/2928 [00:00<00:00, 820094.97 examples/s]Saving the dataset (1/1 shards): 100% 2928/2928 [00:00<00:00, 797410.69 examples/s]
+`torch_dtype` is deprecated! Use `dtype` instead!
+Padding-free training is enabled, but the attention implementation is not set to a supported flash attention variant. Padding-free training flattens batches into a single sequence, and only the following implementations are known to reliably support this: flash_attention_2, flash_attention_3, kernels-community/flash-attn, kernels-community/flash-attn3, kernels-community/vllm-flash-attn3. Using other implementations may lead to unexpected behavior. To ensure compatibility, set `attn_implementation` in the model configuration to one of these supported options or verify that your attention mechanism can handle flattened sequences.
+Truncating train dataset:   0% 0/244768 [00:00<?, ? examples/s]Truncating train dataset:  69% 170000/244768 [00:00<00:00, 1684785.81 examples/s]Truncating train dataset: 100% 244768/244768 [00:00<00:00, 1178924.92 examples/s]
+{"step": 10, "elapsed_seconds": 14.655091820999587, "step_seconds": 1.3321336019998853, "target_tokens": 21646, "warmup": true}
+{'loss': 11.2226, 'grad_norm': 3.03125, 'learning_rate': 1.3499999999999998e-05, 'epoch': 0.01045888351418486}
+{"step": 20, "elapsed_seconds": 28.92319939399931, "step_seconds": 1.4900876140000037, "target_tokens": 24221, "warmup": false}
+{'loss': 11.1112, 'grad_norm': 3.046875, 'learning_rate': 2.8499999999999998e-05, 'epoch': 0.02091776702836972}
+{"step": 30, "elapsed_seconds": 43.04944211599923, "step_seconds": 1.3755470209998748, "target_tokens": 22538, "warmup": false}
+{'loss': 10.541, 'grad_norm': 3.234375, 'learning_rate': 4.3499999999999993e-05, 'epoch': 0.031376650542554584}
+{"step": 40, "elapsed_seconds": 56.89895205599896, "step_seconds": 1.3395589149986336, "target_tokens": 22173, "warmup": false}
+{'loss': 9.5197, 'grad_norm': 1.484375, 'learning_rate': 5.85e-05, 'epoch': 0.04183553405673944}
+{'train_runtime': 61.1141, 'train_loss': 10.48471029414687, 'epoch': 0.0449731991109949}
+{
+  "train_seconds": 61.11338842399891,
+  "optimizer_steps": 43,
+  "target_tokens": 977049,
+  "tokens_per_second_including_warmup": 15987.478770139964,
+  "warmup_steps": 10,
+  "measured_steps": 33,
+  "measured_seconds": 46.458296602999326,
+  "tokens_per_second": 16289.081936575862,
+  "seconds_per_optimizer_step": 1.4078271697878584,
+  "peak_allocated_gib": 11.927547454833984,
+  "peak_reserved_gib": 13.498046875,
+  "validation_loss": 8.759454800710408,
+  "validation_target_tokens": 50694
+}

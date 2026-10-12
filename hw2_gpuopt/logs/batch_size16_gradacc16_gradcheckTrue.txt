@@ -1,0 +1,53 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 11.8.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+tokenizer_config.json: 0.00B [00:00, ?B/s]tokenizer_config.json: 1.25kB [00:00, 7.37MB/s]
+vocab.json: 0.00B [00:00, ?B/s]vocab.json: 1.58MB [00:00, 15.0MB/s]vocab.json: 1.71MB [00:00, 16.0MB/s]
+merges.txt: 0.00B [00:00, ?B/s]merges.txt: 1.27MB [00:00, 66.0MB/s]
+special_tokens_map.json:   0% 0.00/574 [00:00<?, ?B/s]special_tokens_map.json: 100% 574/574 [00:00<00:00, 4.51MB/s]
+README.md: 0.00B [00:00, ?B/s]README.md: 131kB [00:00, 198MB/s]
+Resolving data files:   0% 0/21 [00:00<?, ?it/s]Resolving data files:  52% 11/21 [00:00<00:00, 50.30it/s]Resolving data files:  81% 17/21 [00:00<00:00, 38.93it/s]Resolving data files: 100% 21/21 [00:03<00:00,  4.42it/s]Resolving data files: 100% 21/21 [00:03<00:00,  6.47it/s]
+Подготовлено 5000/50500 статей
+Подготовлено 10000/50500 статей
+Подготовлено 15000/50500 статей
+Подготовлено 20000/50500 статей
+Подготовлено 25000/50500 статей
+Подготовлено 30000/50500 статей
+Подготовлено 35000/50500 статей
+Подготовлено 40000/50500 статей
+Подготовлено 45000/50500 статей
+Подготовлено 50000/50500 статей
+Saving the dataset (0/1 shards):   0% 0/244768 [00:00<?, ? examples/s]Saving the dataset (0/1 shards):  74% 180000/244768 [00:00<00:00, 1759392.60 examples/s]Saving the dataset (1/1 shards): 100% 244768/244768 [00:00<00:00, 1759392.60 examples/s]Saving the dataset (1/1 shards): 100% 244768/244768 [00:00<00:00, 1757536.24 examples/s]
+Saving the dataset (0/1 shards):   0% 0/2928 [00:00<?, ? examples/s]Saving the dataset (1/1 shards): 100% 2928/2928 [00:00<00:00, 821521.31 examples/s]Saving the dataset (1/1 shards): 100% 2928/2928 [00:00<00:00, 797566.05 examples/s]
+`torch_dtype` is deprecated! Use `dtype` instead!
+Truncating train dataset:   0% 0/244768 [00:00<?, ? examples/s]Truncating train dataset:  70% 171000/244768 [00:00<00:00, 1689343.49 examples/s]Truncating train dataset: 100% 244768/244768 [00:00<00:00, 1204543.71 examples/s]
+{"step": 10, "elapsed_seconds": 35.868446779000806, "step_seconds": 3.2725640500002555, "target_tokens": 21646, "warmup": true}
+{'loss': 11.2225, 'grad_norm': 3.03125, 'learning_rate': 1.3499999999999998e-05, 'epoch': 0.01045888351418486}
+{'train_runtime': 62.9502, 'train_loss': 11.184761047363281, 'epoch': 0.01882599032553275}
+{
+  "train_seconds": 62.94946853300007,
+  "optimizer_steps": 18,
+  "target_tokens": 406013,
+  "tokens_per_second_including_warmup": 6449.824112290246,
+  "warmup_steps": 10,
+  "measured_steps": 8,
+  "measured_seconds": 27.081021753999266,
+  "tokens_per_second": 6858.197659125333,
+  "seconds_per_optimizer_step": 3.3851277192499083,
+  "peak_allocated_gib": 12.296085357666016,
+  "peak_reserved_gib": 19.10546875,
+  "validation_loss": 11.023748308844635,
+  "validation_target_tokens": 50694
+}

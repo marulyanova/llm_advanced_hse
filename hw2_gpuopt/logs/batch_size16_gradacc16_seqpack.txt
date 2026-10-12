@@ -1,0 +1,53 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 11.8.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+tokenizer_config.json: 0.00B [00:00, ?B/s]tokenizer_config.json: 1.25kB [00:00, 6.61MB/s]
+vocab.json: 0.00B [00:00, ?B/s]vocab.json: 773kB [00:00, 6.62MB/s]vocab.json: 1.71MB [00:00, 9.70MB/s]
+merges.txt: 0.00B [00:00, ?B/s]merges.txt: 1.27MB [00:00, 45.5MB/s]
+special_tokens_map.json:   0% 0.00/574 [00:00<?, ?B/s]special_tokens_map.json: 100% 574/574 [00:00<00:00, 5.75MB/s]
+README.md: 0.00B [00:00, ?B/s]README.md: 131kB [00:00, 203MB/s]
+Resolving data files:   0% 0/21 [00:00<?, ?it/s]Resolving data files:  52% 11/21 [00:00<00:00, 33.22it/s]Resolving data files:  71% 15/21 [00:01<00:00, 10.08it/s]Resolving data files: 100% 21/21 [00:01<00:00, 16.66it/s]
+Подготовлено 5000/50500 статей
+Подготовлено 10000/50500 статей
+Подготовлено 15000/50500 статей
+Подготовлено 20000/50500 статей
+Подготовлено 25000/50500 статей
+Подготовлено 30000/50500 статей
+Подготовлено 35000/50500 статей
+Подготовлено 40000/50500 статей
+Подготовлено 45000/50500 статей
+Подготовлено 50000/50500 статей
+Saving the dataset (0/1 shards):   0% 0/244768 [00:00<?, ? examples/s]Saving the dataset (0/1 shards):  74% 180000/244768 [00:00<00:00, 1763382.82 examples/s]Saving the dataset (1/1 shards): 100% 244768/244768 [00:00<00:00, 1763382.82 examples/s]Saving the dataset (1/1 shards): 100% 244768/244768 [00:00<00:00, 1762012.68 examples/s]
+Saving the dataset (0/1 shards):   0% 0/2928 [00:00<?, ? examples/s]Saving the dataset (1/1 shards): 100% 2928/2928 [00:00<00:00, 819875.97 examples/s]Saving the dataset (1/1 shards): 100% 2928/2928 [00:00<00:00, 796169.99 examples/s]
+`torch_dtype` is deprecated! Use `dtype` instead!
+Padding-free training is enabled, but the attention implementation is not set to a supported flash attention variant. Padding-free training flattens batches into a single sequence, and only the following implementations are known to reliably support this: flash_attention_2, flash_attention_3, kernels-community/flash-attn, kernels-community/flash-attn3, kernels-community/vllm-flash-attn3. Using other implementations may lead to unexpected behavior. To ensure compatibility, set `attn_implementation` in the model configuration to one of these supported options or verify that your attention mechanism can handle flattened sequences.
+You are using packing, but the attention implementation is not set to a supported flash attention variant. Packing gathers multiple samples into a single sequence, and only the following implementations are known to reliably support this: flash_attention_2, flash_attention_3, kernels-community/flash-attn, kernels-community/flash-attn3, kernels-community/vllm-flash-attn3. Using other implementations may lead to cross-contamination between samples. To avoid this, either disable packing by setting `packing=False`, or set `attn_implementation` in the model configuration to one of these supported options.
+Packing train dataset:   0% 0/244768 [00:00<?, ? examples/s]Packing train dataset:   4% 10000/244768 [00:00<00:02, 95038.68 examples/s]Packing train dataset:   9% 21000/244768 [00:00<00:02, 98061.25 examples/s]Packing train dataset:  13% 33000/244768 [00:00<00:02, 99576.52 examples/s]Packing train dataset:  18% 45000/244768 [00:00<00:01, 100266.94 examples/s]Packing train dataset:  23% 57000/244768 [00:00<00:01, 100777.03 examples/s]Packing train dataset:  28% 69000/244768 [00:00<00:01, 101010.49 examples/s]Packing train dataset:  33% 81000/244768 [00:00<00:01, 101058.05 examples/s]Packing train dataset:  38% 93000/244768 [00:00<00:01, 101098.22 examples/s]Packing train dataset:  43% 105000/244768 [00:01<00:01, 101140.41 examples/s]Packing train dataset:  48% 117000/244768 [00:01<00:01, 101133.63 examples/s]Packing train dataset:  52% 128000/244768 [00:01<00:01, 100981.63 examples/s]Packing train dataset:  57% 140000/244768 [00:01<00:01, 100949.13 examples/s]Packing train dataset:  62% 152000/244768 [00:01<00:00, 101019.21 examples/s]Packing train dataset:  67% 163000/244768 [00:01<00:00, 100899.80 examples/s]Packing train dataset:  71% 175000/244768 [00:01<00:00, 100985.85 examples/s]Packing train dataset:  76% 187000/244768 [00:01<00:00, 101095.28 examples/s]Packing train dataset:  81% 199000/244768 [00:01<00:00, 101464.87 examples/s]Packing train dataset:  86% 211000/244768 [00:02<00:00, 101315.47 examples/s]Packing train dataset:  91% 223000/244768 [00:02<00:00, 101498.57 examples/s]Packing train dataset:  96% 235000/244768 [00:02<00:00, 101302.32 examples/s]Packing train dataset: 100% 244768/244768 [00:02<00:00, 98377.73 examples/s] 
+{'train_runtime': 70.3634, 'train_loss': 11.224276224772135, 'epoch': 0.03484573502722323}
+{
+  "train_seconds": 70.36266530000012,
+  "optimizer_steps": 6,
+  "target_tokens": 768344,
+  "tokens_per_second_including_warmup": 10919.768270915665,
+  "warmup_steps": 10,
+  "measured_steps": 0,
+  "measured_seconds": 0,
+  "tokens_per_second": null,
+  "seconds_per_optimizer_step": null,
+  "peak_allocated_gib": 25.61166286468506,
+  "peak_reserved_gib": 39.732421875,
+  "validation_loss": 11.223654672098418,
+  "validation_target_tokens": 50694
+}
