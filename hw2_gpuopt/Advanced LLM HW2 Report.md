@@ -19,15 +19,17 @@
 ### **Возникшие проблемы:**
 
 1) batch_size16_gradacc16_paddingfree_flashat_actoffload
-   ```
+
+```
    RuntimeError: CUDA error: CUDA-capable device(s) is/are busy or unavailable
 CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
 For debugging consider passing CUDA_LAUNCH_BLOCKING=1
 Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
-   ```
+```
 
 2) batch_size16_gradacc16_paddingfree_flashatt_compile
-   ```
+
+```
    torch._dynamo.exc.BackendCompilerFailed: backend='inductor' raised:
 RuntimeError: Triton Error [CUDA]: device kernel image is invalid
 
@@ -36,10 +38,11 @@ Set TORCH_LOGS="+dynamo" and TORCHDYNAMO_VERBOSE=1 for more information
 You can suppress this exception and fall back to eager by setting:
     import torch._dynamo
     torch._dynamo.config.suppress_errors = True
-   ```
+```
 
 3) batch_size16_gradacc16_paddingfree_flashatt_compileinductor
-   ```
+
+```
    torch._dynamo.exc.BackendCompilerFailed: backend='inductor' raised:
 RuntimeError: Triton Error [CUDA]: device kernel image is invalid
 
@@ -48,10 +51,11 @@ Set TORCH_LOGS="+dynamo" and TORCHDYNAMO_VERBOSE=1 for more information
 You can suppress this exception and fall back to eager by setting:
     import torch._dynamo
     torch._dynamo.config.suppress_errors = True
-   ```
+```
 
 4) batch_size16_gradacc16_paddingfree_flashatt_ligerkernel
-   ```
+
+```
      File "/opt/conda/lib/python3.11/site-packages/triton/runtime/jit.py", line 653, in run
     kernel.run(grid_0, grid_1, grid_2, stream, kernel.function, kernel.packed_metadata, launch_metadata,
     ^^^^^^^^^^
@@ -61,7 +65,7 @@ You can suppress this exception and fall back to eager by setting:
     self.module, self.function, self.n_regs, self.n_spills = driver.active.utils.load_binary(
                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 RuntimeError: Triton Error [CUDA]: device kernel image is invalid
-   ```
+```
 
 ### **Возможные причины проблем:**
 
