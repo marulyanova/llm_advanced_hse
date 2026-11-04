@@ -1,6 +1,0 @@
-{
-  "torch": "2.8.0+cu126",
-  "gpu": "NVIDIA A100-SXM4-80GB",
-  "cuda": "12.6",
-  "model_commit": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
-}

@@ -1,1 +1,12 @@
-**.safetensors**
+# Generated model weights and training checkpoints
+*.safetensors*
+/runs/*/model/
+/runs/*/checkpoints/
+
+# Downloaded datasets and tokenization cache
+/data/
+
+# Local Python and OS artifacts
+__pycache__/
+*.py[cod]
+.DS_Store
