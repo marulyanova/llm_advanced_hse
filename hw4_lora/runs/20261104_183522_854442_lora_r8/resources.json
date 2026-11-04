@@ -1,0 +1,9 @@
+{
+  "training_seconds": 289.9241853170097,
+  "peak_gpu_allocated_gb": 41.35798788070679,
+  "peak_gpu_reserved_gb": 76.390625,
+  "total_parameters": 1544803840,
+  "trainable_parameters": 1089536,
+  "trainable_percent": 0.07052908413277896,
+  "effective_batch_size": 64
+}

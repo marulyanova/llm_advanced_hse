@@ -1,0 +1,11 @@
+{
+  "examples": 1319,
+  "accuracy": 0.49507202426080366,
+  "parse_rate": 0.9939347990902199,
+  "invalid_answers": 8,
+  "mae_parsed": 2856.0444189858704,
+  "mae_all": null,
+  "answer_nll": 0.43385431151675696,
+  "answer_tokens": 166398,
+  "perplexity": 1.5431940261414232
+}
