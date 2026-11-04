@@ -1,0 +1,30 @@
+{
+  "name": "lora_default",
+  "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+  "model_revision": "main",
+  "dataset_name": "openai/gsm8k",
+  "dataset_revision": "main",
+  "seed": 42,
+  "epochs": 3,
+  "learning_rate": 0.0002,
+  "batch_size": 16,
+  "eval_batch_size": 64,
+  "gradient_accumulation_steps": 4,
+  "max_length": 2048,
+  "max_new_tokens": 512,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.03,
+  "bf16": true,
+  "logging_steps": 1,
+  "gradient_checkpointing": false,
+  "train_limit": null,
+  "test_limit": null,
+  "manual_examples": 10,
+  "r": 16,
+  "alpha": 32,
+  "dropout": 0.05,
+  "target_modules": [
+    "q_proj",
+    "v_proj"
+  ]
+}

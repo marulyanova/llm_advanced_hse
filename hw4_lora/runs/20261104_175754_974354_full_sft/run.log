@@ -1,0 +1,119 @@
+2026-11-04 17:57:54,975 Новый запуск: full_sft
+2026-11-04 17:57:54,975 Папка результатов: /home/edu/hw4_lora_ulyanova/runs/20261104_175754_974354_full_sft
+2026-11-04 17:57:55,052 GPU: NVIDIA A100-SXM4-80GB
+2026-11-04 17:57:55,052 [1/7] Загружается датасет openai/gsm8k...
+2026-11-04 17:58:01,094 Датасет загружен за 6.0 сек.
+2026-11-04 17:58:01,094 Будут использованы train=7473, test=1319.
+2026-11-04 17:58:01,095 [2/7] Загружается токенизатор Qwen/Qwen2.5-1.5B-Instruct...
+2026-11-04 17:58:01,649 Токенизатор загружен.
+2026-11-04 17:58:01,649 [3/7] Подготовка данных: chat template и токенизация train/test...
+2026-11-04 17:58:09,482 Данные подготовлены за 7.8 сек.
+2026-11-04 17:58:09,482 [4/7] Загружается модель Qwen/Qwen2.5-1.5B-Instruct и переносится на GPU...
+2026-11-04 17:58:10,821 Модель готова за 1.3 сек.
+2026-11-04 17:58:10,822 [5/7] Оценка исходной модели на test. Обучение начнется после этого этапа.
+2026-11-04 17:58:10,822 Оценка base: 1319 задач, batch_size=64, всего 21 батчей.
+2026-11-04 18:03:16,527 base: {'examples': 1319, 'accuracy': 0.01288855193328279, 'parse_rate': 0.019711902956785442, 'invalid_answers': 1293, 'mae_parsed': 1206.5192307692307, 'mae_all': None, 'answer_nll': 0.6072566762849011, 'answer_tokens': 166398, 'perplexity': 1.835389418733154}
+2026-11-04 18:03:16,530 Обучаемых параметров: 1543714304 из 1543714304.
+2026-11-04 18:03:16,566 [6/7] Подготовлен Trainer. Начинается обучение...
+2026-11-04 18:03:16,744 Начинается обучение: 3 эпох, 45 шагов обновления весов. На один шаг приходится до 4 мини-батчей.
+2026-11-04 18:03:18,192 Запуск завершился с ошибкой
+Traceback (most recent call last):
+  File "/home/edu/hw4_lora_ulyanova/full_sft.py", line 351, in run_experiment
+    train_and_evaluate(config, run_dir)
+  File "/home/edu/hw4_lora_ulyanova/full_sft.py", line 496, in train_and_evaluate
+    trainer.train()
+  File "/home/edu/.venv/lib/python3.12/site-packages/transformers/trainer.py", line 2328, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/transformers/trainer.py", line 2672, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/transformers/trainer.py", line 4009, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/transformers/trainer.py", line 4099, in compute_loss
+    outputs = model(**inputs)
+              ^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/nn/parallel/data_parallel.py", line 194, in forward
+    outputs = self.parallel_apply(replicas, inputs, module_kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/nn/parallel/data_parallel.py", line 213, in parallel_apply
+    return parallel_apply(
+           ^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py", line 129, in parallel_apply
+    output.reraise()
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/_utils.py", line 769, in reraise
+    raise exception
+torch.OutOfMemoryError: Caught OutOfMemoryError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/nn/parallel/parallel_apply.py", line 99, in _worker
+    output = module(*input, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/transformers/utils/generic.py", line 940, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 449, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+                                       ^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/transformers/utils/generic.py", line 1064, in wrapper
+    outputs = func(self, *args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 384, in forward
+    hidden_states = decoder_layer(
+                    ^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/transformers/modeling_layers.py", line 94, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 249, in forward
+    hidden_states = self.mlp(hidden_states)
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 46, in forward
+    down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 434, in forward
+    return F.silu(input, inplace=self.inplace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/edu/.venv/lib/python3.12/site-packages/torch/nn/functional.py", line 2375, in silu
+    return torch._C._nn.silu(input)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 510.00 MiB. GPU 0 has a total capacity of 79.25 GiB of which 62.75 MiB is free. Including non-PyTorch memory, this process has 79.18 GiB memory in use. Of the allocated memory 77.84 GiB is allocated by PyTorch, and 428.62 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
