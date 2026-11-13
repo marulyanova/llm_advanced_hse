@@ -2,6 +2,13 @@
 
 Qwen/Qwen3.5-2B · ToolACE · RL через TRL · оценка BFCL.
 
+## Материалы
+
+- **Отчёт:** [PDF](report/report.pdf), [итоговая таблица CSV](report/summary.csv), [графики](report/figures/).
+- **Код:** [подготовка данных](prepare_data.py), [разбор ToolACE](toolace.py), [награды](rewards.py), [обучение](train.py), [экспорт модели](export_model.py), [оценка BFCL](evaluate.py).
+- **Воспроизведение:** [общий конфиг](config.py), [Dockerfile](Dockerfile), [конфиги и логи запусков](runs/).
+- **Результаты:** [метрики и ответы BFCL](results/), [EDA](report/data/eda.json), [manifest](report/data/manifest.json), [разбор ошибок](report/best_model_errors.jsonl), [проверки](report/audit.json).
+
 ## Запуски
 
 Проведены 10 RL-запусков по 30 шагов. Для baseline и каждого выбранного чекпоинта сохранены метрики и 350 ответов BFCL.
@@ -146,13 +153,7 @@ E — точное совпадение мультимножеств вызов�
 
 ![rl10_cispo](report/figures/rl10_cispo.png)
 
-## Файлы и воспроизведение
-
-- [PDF-отчёт](report/report.pdf), [Markdown](report/report.md), [таблица CSV](report/summary.csv), [проверки](report/audit.json).
-- `prepare_data.py`, `toolace.py` — подготовка ToolACE; `rewards.py` — награды.
-- `train.py` — конфигурации RL; `export_model.py` — слияние LoRA; `evaluate.py` — выданный evaluator без изменений.
-- `runs/<имя>/` — конфиг, эффективные trainer_args, логи, выбранный шаг, validation ID и исходники запуска.
-- `results/<имя>/` — metrics.json и predictions.jsonl; `report/` — отчёт, графики и EDA.
+## Воспроизведение
 
 Обучающие данные остаются локально в `data/` и исключены из Git. Для подготовки укажите в `prepare_data.py → CONFIG["dataset_revision"]` ревизию ToolACE `6bda777c88d21e5a204703c1ee45597a8fa4f734`. Ревизия модели — `15852e8c16360a2fea060d615a32b45270f8a8fc`; seed=42. Выберите имя запуска из таблицы в `config.py → CONFIG["experiment"]`; настройки конкретного опыта берите из сохранённых config.json и trainer_args.json. Для повторного обучения используйте новую папку runs, поскольку существующие запуски не перезаписываются.
 
