@@ -1,0 +1,8 @@
+{
+  "criterion": "eval_quality/exact",
+  "best_metric": 0.671875,
+  "checkpoint": "/workspace/runs/rl3_dr_grpo_1/checkpoint-10",
+  "selected_step": 10,
+  "total_steps": 30,
+  "adapter": "best_adapter"
+}

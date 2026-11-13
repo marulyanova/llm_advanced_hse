@@ -1,0 +1,8 @@
+{
+  "criterion": "eval_quality/exact",
+  "best_metric": 0.7421875,
+  "checkpoint": "/workspace/runs/rl5_no_kl/checkpoint-20",
+  "selected_step": 20,
+  "total_steps": 30,
+  "adapter": "best_adapter"
+}

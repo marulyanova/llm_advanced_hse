@@ -1,0 +1,8 @@
+{
+  "criterion": "eval_quality/exact",
+  "best_metric": 0.7109375,
+  "checkpoint": "/workspace/runs/rl8_no_reward_scaling/checkpoint-10",
+  "selected_step": 10,
+  "total_steps": 30,
+  "adapter": "best_adapter"
+}

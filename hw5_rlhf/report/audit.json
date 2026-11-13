@@ -1,0 +1,55 @@
+{
+  "evaluations": 11,
+  "predictions_per_evaluation": 350,
+  "benchmark_ids_match": true,
+  "category_counts_match_predictions": true,
+  "evaluation_signatures_match": true,
+  "best_run": "rl5_no_kl",
+  "best_overall": 0.72,
+  "rl7_same_effective_trainer_args_as_rl2": true,
+  "data": {
+    "train.jsonl": {
+      "valid_json_rows": 9415,
+      "invalid_lines": [],
+      "bytes": 57672133,
+      "sha256": "1591e4a3727949567f41a574328adb7fa36d1308c67fc2f234f29d37ae47e6b9",
+      "expected_sha256": "1591e4a3727949567f41a574328adb7fa36d1308c67fc2f234f29d37ae47e6b9",
+      "hash_matches": true
+    },
+    "validation.jsonl": {
+      "valid_json_rows": 1033,
+      "invalid_lines": [],
+      "bytes": 6230965,
+      "sha256": "16edeee2481b10f2cd9c9dc164c6b404e69373b26ded3e16d46284c311de10d6",
+      "expected_sha256": "16edeee2481b10f2cd9c9dc164c6b404e69373b26ded3e16d46284c311de10d6",
+      "hash_matches": true
+    }
+  },
+  "data_integrity_checks": {
+    "train_validation_dialogue_overlap": 0,
+    "duplicate_example_ids": 0,
+    "split_assignments_match_dialogue_splits": true,
+    "all_13_run_data_manifests_match": true,
+    "eda_counts_and_distributions_match": true
+  },
+  "adapter_weight_files": [],
+  "exported_checkpoints_directory_exists": false,
+  "dataset_publication": {
+    "data_directory_tracked": false,
+    "local_data_retained": true,
+    "report_metadata_directory": "report/data"
+  },
+  "cleanup": {
+    "removed_items": 64,
+    "removed_bytes": 753360505,
+    "removed_categories": [
+      "training checkpoint directories",
+      "best_adapter directories",
+      "trainer state",
+      "generated model cards",
+      "raw ToolACE copy",
+      "macOS metadata"
+    ],
+    "prepared_train_and_validation_retained": true
+  }
+}

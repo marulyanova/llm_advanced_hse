@@ -1,0 +1,7 @@
+/data/
+/checkpoints/
+/runs/*/checkpoint-*/
+/runs/*/best_adapter/
+__pycache__/
+*.pyc
+.DS_Store

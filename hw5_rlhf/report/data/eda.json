@@ -1,0 +1,1537 @@
+{
+  "raw_dialogues": 11300,
+  "unique_dialogues": 11297,
+  "duplicate_dialogues": 3,
+  "rejected": {
+    "dialogue_parse": 1020,
+    "reference_not_roundtrippable": 874,
+    "long_prompt": 11,
+    "long_reference": 3
+  },
+  "before_filtering": {
+    "train": {
+      "examples": 10213,
+      "dialogues": 9249,
+      "kinds": {
+        "call": 8426,
+        "no_call": 1787
+      },
+      "calls_per_answer": {
+        "3": 1089,
+        "1": 4839,
+        "4": 791,
+        "2": 1474,
+        "0": 1787,
+        "5": 156,
+        "6": 55,
+        "7": 15,
+        "8": 4,
+        "9": 2,
+        "12": 1
+      },
+      "tools_per_prompt": {
+        "count": 10213,
+        "min": 1,
+        "mean": 3.2944286693429943,
+        "median": 3,
+        "p95": 6,
+        "max": 9,
+        "histogram": [
+          {
+            "left": 0,
+            "right": 1,
+            "count": 0
+          },
+          {
+            "left": 1,
+            "right": 2,
+            "count": 2488
+          },
+          {
+            "left": 2,
+            "right": 3,
+            "count": 1694
+          },
+          {
+            "left": 3,
+            "right": 4,
+            "count": 1638
+          },
+          {
+            "left": 4,
+            "right": 5,
+            "count": 1394
+          },
+          {
+            "left": 5,
+            "right": 6,
+            "count": 1341
+          },
+          {
+            "left": 6,
+            "right": 7,
+            "count": 1249
+          },
+          {
+            "left": 7,
+            "right": 8,
+            "count": 216
+          },
+          {
+            "left": 8,
+            "right": 9,
+            "count": 168
+          },
+          {
+            "left": 9,
+            "right": 10,
+            "count": 25
+          }
+        ]
+      },
+      "prompt_tokens": {
+        "count": 10213,
+        "min": 272,
+        "mean": 758.0279056104964,
+        "median": 691,
+        "p95": 1383,
+        "max": 4593,
+        "histogram": [
+          {
+            "left": 0,
+            "right": 230,
+            "count": 0
+          },
+          {
+            "left": 230,
+            "right": 460,
+            "count": 1765
+          },
+          {
+            "left": 460,
+            "right": 690,
+            "count": 3322
+          },
+          {
+            "left": 690,
+            "right": 920,
+            "count": 2594
+          },
+          {
+            "left": 920,
+            "right": 1150,
+            "count": 1375
+          },
+          {
+            "left": 1150,
+            "right": 1380,
+            "count": 638
+          },
+          {
+            "left": 1380,
+            "right": 1610,
+            "count": 277
+          },
+          {
+            "left": 1610,
+            "right": 1840,
+            "count": 110
+          },
+          {
+            "left": 1840,
+            "right": 2070,
+            "count": 62
+          },
+          {
+            "left": 2070,
+            "right": 2300,
+            "count": 26
+          },
+          {
+            "left": 2300,
+            "right": 2530,
+            "count": 16
+          },
+          {
+            "left": 2530,
+            "right": 2760,
+            "count": 11
+          },
+          {
+            "left": 2760,
+            "right": 2990,
+            "count": 6
+          },
+          {
+            "left": 2990,
+            "right": 3220,
+            "count": 2
+          },
+          {
+            "left": 3220,
+            "right": 3450,
+            "count": 0
+          },
+          {
+            "left": 3450,
+            "right": 3680,
+            "count": 4
+          },
+          {
+            "left": 3680,
+            "right": 3910,
+            "count": 3
+          },
+          {
+            "left": 3910,
+            "right": 4140,
+            "count": 0
+          },
+          {
+            "left": 4140,
+            "right": 4370,
+            "count": 0
+          },
+          {
+            "left": 4370,
+            "right": 4600,
+            "count": 2
+          }
+        ]
+      },
+      "reference_tokens": {
+        "count": 10213,
+        "min": 7,
+        "mean": 100.2871830020562,
+        "median": 67,
+        "p95": 282,
+        "max": 1240,
+        "histogram": [
+          {
+            "left": 0,
+            "right": 63,
+            "count": 4802
+          },
+          {
+            "left": 63,
+            "right": 126,
+            "count": 2730
+          },
+          {
+            "left": 126,
+            "right": 189,
+            "count": 1312
+          },
+          {
+            "left": 189,
+            "right": 252,
+            "count": 690
+          },
+          {
+            "left": 252,
+            "right": 315,
+            "count": 325
+          },
+          {
+            "left": 315,
+            "right": 378,
+            "count": 170
+          },
+          {
+            "left": 378,
+            "right": 441,
+            "count": 97
+          },
+          {
+            "left": 441,
+            "right": 504,
+            "count": 43
+          },
+          {
+            "left": 504,
+            "right": 567,
+            "count": 22
+          },
+          {
+            "left": 567,
+            "right": 630,
+            "count": 9
+          },
+          {
+            "left": 630,
+            "right": 693,
+            "count": 2
+          },
+          {
+            "left": 693,
+            "right": 756,
+            "count": 2
+          },
+          {
+            "left": 756,
+            "right": 819,
+            "count": 3
+          },
+          {
+            "left": 819,
+            "right": 882,
+            "count": 2
+          },
+          {
+            "left": 882,
+            "right": 945,
+            "count": 1
+          },
+          {
+            "left": 945,
+            "right": 1008,
+            "count": 0
+          },
+          {
+            "left": 1008,
+            "right": 1071,
+            "count": 0
+          },
+          {
+            "left": 1071,
+            "right": 1134,
+            "count": 0
+          },
+          {
+            "left": 1134,
+            "right": 1197,
+            "count": 2
+          },
+          {
+            "left": 1197,
+            "right": 1260,
+            "count": 1
+          }
+        ]
+      },
+      "unique_tool_names": 15116,
+      "top_tool_names": [
+        [
+          "Search",
+          95
+        ],
+        [
+          "Get Supported Languages",
+          66
+        ],
+        [
+          "Get Products in Category",
+          45
+        ],
+        [
+          "loginUser",
+          37
+        ],
+        [
+          "getUserByName",
+          36
+        ],
+        [
+          "Get Categories",
+          33
+        ],
+        [
+          "Get Products",
+          32
+        ],
+        [
+          "Get User Information",
+          32
+        ],
+        [
+          "search",
+          30
+        ],
+        [
+          "Get User Followers",
+          26
+        ],
+        [
+          "getInventory",
+          26
+        ],
+        [
+          "GetFileVersions",
+          25
+        ],
+        [
+          "Get Countries",
+          24
+        ],
+        [
+          "auto-complete",
+          24
+        ],
+        [
+          "Measure Distance",
+          23
+        ],
+        [
+          "Autocomplete",
+          23
+        ],
+        [
+          "StorageExists",
+          22
+        ],
+        [
+          "GetFilesList",
+          22
+        ],
+        [
+          "Facilities Lookup",
+          22
+        ],
+        [
+          "Get Languages",
+          22
+        ]
+      ]
+    },
+    "validation": {
+      "examples": 1123,
+      "dialogues": 1028,
+      "kinds": {
+        "call": 933,
+        "no_call": 190
+      },
+      "calls_per_answer": {
+        "1": 527,
+        "2": 178,
+        "0": 190,
+        "3": 107,
+        "4": 96,
+        "5": 21,
+        "6": 2,
+        "8": 1,
+        "7": 1
+      },
+      "tools_per_prompt": {
+        "count": 1123,
+        "min": 1,
+        "mean": 3.192341941228851,
+        "median": 3,
+        "p95": 6,
+        "max": 8,
+        "histogram": [
+          {
+            "left": 0,
+            "right": 1,
+            "count": 0
+          },
+          {
+            "left": 1,
+            "right": 2,
+            "count": 286
+          },
+          {
+            "left": 2,
+            "right": 3,
+            "count": 178
+          },
+          {
+            "left": 3,
+            "right": 4,
+            "count": 214
+          },
+          {
+            "left": 4,
+            "right": 5,
+            "count": 137
+          },
+          {
+            "left": 5,
+            "right": 6,
+            "count": 142
+          },
+          {
+            "left": 6,
+            "right": 7,
+            "count": 130
+          },
+          {
+            "left": 7,
+            "right": 8,
+            "count": 25
+          },
+          {
+            "left": 8,
+            "right": 9,
+            "count": 11
+          }
+        ]
+      },
+      "prompt_tokens": {
+        "count": 1123,
+        "min": 272,
+        "mean": 745.7364203027605,
+        "median": 684,
+        "p95": 1351,
+        "max": 3242,
+        "histogram": [
+          {
+            "left": 0,
+            "right": 163,
+            "count": 0
+          },
+          {
+            "left": 163,
+            "right": 326,
+            "count": 35
+          },
+          {
+            "left": 326,
+            "right": 489,
+            "count": 205
+          },
+          {
+            "left": 489,
+            "right": 652,
+            "count": 266
+          },
+          {
+            "left": 652,
+            "right": 815,
+            "count": 227
+          },
+          {
+            "left": 815,
+            "right": 978,
+            "count": 172
+          },
+          {
+            "left": 978,
+            "right": 1141,
+            "count": 98
+          },
+          {
+            "left": 1141,
+            "right": 1304,
+            "count": 55
+          },
+          {
+            "left": 1304,
+            "right": 1467,
+            "count": 27
+          },
+          {
+            "left": 1467,
+            "right": 1630,
+            "count": 21
+          },
+          {
+            "left": 1630,
+            "right": 1793,
+            "count": 10
+          },
+          {
+            "left": 1793,
+            "right": 1956,
+            "count": 3
+          },
+          {
+            "left": 1956,
+            "right": 2119,
+            "count": 2
+          },
+          {
+            "left": 2119,
+            "right": 2282,
+            "count": 1
+          },
+          {
+            "left": 2282,
+            "right": 2445,
+            "count": 0
+          },
+          {
+            "left": 2445,
+            "right": 2608,
+            "count": 0
+          },
+          {
+            "left": 2608,
+            "right": 2771,
+            "count": 0
+          },
+          {
+            "left": 2771,
+            "right": 2934,
+            "count": 0
+          },
+          {
+            "left": 2934,
+            "right": 3097,
+            "count": 0
+          },
+          {
+            "left": 3097,
+            "right": 3260,
+            "count": 1
+          }
+        ]
+      },
+      "reference_tokens": {
+        "count": 1123,
+        "min": 7,
+        "mean": 99.39893143365984,
+        "median": 68,
+        "p95": 272,
+        "max": 662,
+        "histogram": [
+          {
+            "left": 0,
+            "right": 34,
+            "count": 178
+          },
+          {
+            "left": 34,
+            "right": 68,
+            "count": 374
+          },
+          {
+            "left": 68,
+            "right": 102,
+            "count": 170
+          },
+          {
+            "left": 102,
+            "right": 136,
+            "count": 145
+          },
+          {
+            "left": 136,
+            "right": 170,
+            "count": 84
+          },
+          {
+            "left": 170,
+            "right": 204,
+            "count": 56
+          },
+          {
+            "left": 204,
+            "right": 238,
+            "count": 40
+          },
+          {
+            "left": 238,
+            "right": 272,
+            "count": 16
+          },
+          {
+            "left": 272,
+            "right": 306,
+            "count": 20
+          },
+          {
+            "left": 306,
+            "right": 340,
+            "count": 13
+          },
+          {
+            "left": 340,
+            "right": 374,
+            "count": 7
+          },
+          {
+            "left": 374,
+            "right": 408,
+            "count": 6
+          },
+          {
+            "left": 408,
+            "right": 442,
+            "count": 8
+          },
+          {
+            "left": 442,
+            "right": 476,
+            "count": 1
+          },
+          {
+            "left": 476,
+            "right": 510,
+            "count": 0
+          },
+          {
+            "left": 510,
+            "right": 544,
+            "count": 1
+          },
+          {
+            "left": 544,
+            "right": 578,
+            "count": 1
+          },
+          {
+            "left": 578,
+            "right": 612,
+            "count": 1
+          },
+          {
+            "left": 612,
+            "right": 646,
+            "count": 1
+          },
+          {
+            "left": 646,
+            "right": 680,
+            "count": 1
+          }
+        ]
+      },
+      "unique_tool_names": 2856,
+      "top_tool_names": [
+        [
+          "Get Supported Languages",
+          14
+        ],
+        [
+          "Search",
+          10
+        ],
+        [
+          "Facilities Lookup",
+          9
+        ],
+        [
+          "Property Details API",
+          8
+        ],
+        [
+          "Get Products",
+          6
+        ],
+        [
+          "Get Property Details",
+          6
+        ],
+        [
+          "Get Address Activities",
+          6
+        ],
+        [
+          "Language Segmenter",
+          6
+        ],
+        [
+          "Chat",
+          6
+        ],
+        [
+          "Career Aptitude Personality Test Questionnaire",
+          6
+        ],
+        [
+          "16 Day Weather Forecast API",
+          5
+        ],
+        [
+          "Generate CPF",
+          5
+        ],
+        [
+          "Best Quote API",
+          5
+        ],
+        [
+          "reverse",
+          5
+        ],
+        [
+          "Today Sure VIP Over 2.5 Goals",
+          5
+        ],
+        [
+          "Get Product Details",
+          5
+        ],
+        [
+          "Get Categories",
+          5
+        ],
+        [
+          "Get Available Authors",
+          5
+        ],
+        [
+          "Get Domain Details",
+          5
+        ],
+        [
+          "LinkedIn Connections",
+          5
+        ]
+      ]
+    }
+  },
+  "after_filtering": {
+    "train": {
+      "examples": 9415,
+      "dialogues": 8488,
+      "kinds": {
+        "call": 7635,
+        "no_call": 1780
+      },
+      "calls_per_answer": {
+        "3": 930,
+        "1": 4574,
+        "4": 663,
+        "2": 1281,
+        "0": 1780,
+        "5": 125,
+        "6": 44,
+        "7": 12,
+        "8": 3,
+        "9": 2,
+        "12": 1
+      },
+      "tools_per_prompt": {
+        "count": 9415,
+        "min": 1,
+        "mean": 3.232501327668614,
+        "median": 3,
+        "p95": 6,
+        "max": 9,
+        "histogram": [
+          {
+            "left": 0,
+            "right": 1,
+            "count": 0
+          },
+          {
+            "left": 1,
+            "right": 2,
+            "count": 2370
+          },
+          {
+            "left": 2,
+            "right": 3,
+            "count": 1625
+          },
+          {
+            "left": 3,
+            "right": 4,
+            "count": 1491
+          },
+          {
+            "left": 4,
+            "right": 5,
+            "count": 1262
+          },
+          {
+            "left": 5,
+            "right": 6,
+            "count": 1211
+          },
+          {
+            "left": 6,
+            "right": 7,
+            "count": 1126
+          },
+          {
+            "left": 7,
+            "right": 8,
+            "count": 179
+          },
+          {
+            "left": 8,
+            "right": 9,
+            "count": 130
+          },
+          {
+            "left": 9,
+            "right": 10,
+            "count": 21
+          }
+        ]
+      },
+      "prompt_tokens": {
+        "count": 9415,
+        "min": 272,
+        "mean": 750.0589484864578,
+        "median": 683,
+        "p95": 1377,
+        "max": 3040,
+        "histogram": [
+          {
+            "left": 0,
+            "right": 153,
+            "count": 0
+          },
+          {
+            "left": 153,
+            "right": 306,
+            "count": 110
+          },
+          {
+            "left": 306,
+            "right": 459,
+            "count": 1552
+          },
+          {
+            "left": 459,
+            "right": 612,
+            "count": 2146
+          },
+          {
+            "left": 612,
+            "right": 765,
+            "count": 1840
+          },
+          {
+            "left": 765,
+            "right": 918,
+            "count": 1476
+          },
+          {
+            "left": 918,
+            "right": 1071,
+            "count": 933
+          },
+          {
+            "left": 1071,
+            "right": 1224,
+            "count": 550
+          },
+          {
+            "left": 1224,
+            "right": 1377,
+            "count": 336
+          },
+          {
+            "left": 1377,
+            "right": 1530,
+            "count": 185
+          },
+          {
+            "left": 1530,
+            "right": 1683,
+            "count": 102
+          },
+          {
+            "left": 1683,
+            "right": 1836,
+            "count": 67
+          },
+          {
+            "left": 1836,
+            "right": 1989,
+            "count": 46
+          },
+          {
+            "left": 1989,
+            "right": 2142,
+            "count": 20
+          },
+          {
+            "left": 2142,
+            "right": 2295,
+            "count": 18
+          },
+          {
+            "left": 2295,
+            "right": 2448,
+            "count": 8
+          },
+          {
+            "left": 2448,
+            "right": 2601,
+            "count": 10
+          },
+          {
+            "left": 2601,
+            "right": 2754,
+            "count": 9
+          },
+          {
+            "left": 2754,
+            "right": 2907,
+            "count": 4
+          },
+          {
+            "left": 2907,
+            "right": 3060,
+            "count": 3
+          }
+        ]
+      },
+      "reference_tokens": {
+        "count": 9415,
+        "min": 7,
+        "mean": 98.07243759957515,
+        "median": 64,
+        "p95": 283,
+        "max": 896,
+        "histogram": [
+          {
+            "left": 0,
+            "right": 45,
+            "count": 3018
+          },
+          {
+            "left": 45,
+            "right": 90,
+            "count": 2869
+          },
+          {
+            "left": 90,
+            "right": 135,
+            "count": 1385
+          },
+          {
+            "left": 135,
+            "right": 180,
+            "count": 793
+          },
+          {
+            "left": 180,
+            "right": 225,
+            "count": 514
+          },
+          {
+            "left": 225,
+            "right": 270,
+            "count": 287
+          },
+          {
+            "left": 270,
+            "right": 315,
+            "count": 213
+          },
+          {
+            "left": 315,
+            "right": 360,
+            "count": 131
+          },
+          {
+            "left": 360,
+            "right": 405,
+            "count": 75
+          },
+          {
+            "left": 405,
+            "right": 450,
+            "count": 58
+          },
+          {
+            "left": 450,
+            "right": 495,
+            "count": 27
+          },
+          {
+            "left": 495,
+            "right": 540,
+            "count": 19
+          },
+          {
+            "left": 540,
+            "right": 585,
+            "count": 10
+          },
+          {
+            "left": 585,
+            "right": 630,
+            "count": 7
+          },
+          {
+            "left": 630,
+            "right": 675,
+            "count": 0
+          },
+          {
+            "left": 675,
+            "right": 720,
+            "count": 2
+          },
+          {
+            "left": 720,
+            "right": 765,
+            "count": 3
+          },
+          {
+            "left": 765,
+            "right": 810,
+            "count": 0
+          },
+          {
+            "left": 810,
+            "right": 855,
+            "count": 2
+          },
+          {
+            "left": 855,
+            "right": 900,
+            "count": 2
+          }
+        ]
+      },
+      "unique_tool_names": 14208,
+      "top_tool_names": [
+        [
+          "Search",
+          86
+        ],
+        [
+          "Get Supported Languages",
+          63
+        ],
+        [
+          "Get Products in Category",
+          39
+        ],
+        [
+          "loginUser",
+          36
+        ],
+        [
+          "getUserByName",
+          34
+        ],
+        [
+          "Get Products",
+          29
+        ],
+        [
+          "Get Categories",
+          29
+        ],
+        [
+          "search",
+          28
+        ],
+        [
+          "Get User Information",
+          27
+        ],
+        [
+          "Get User Followers",
+          25
+        ],
+        [
+          "getInventory",
+          24
+        ],
+        [
+          "GetFileVersions",
+          24
+        ],
+        [
+          "auto-complete",
+          23
+        ],
+        [
+          "Measure Distance",
+          22
+        ],
+        [
+          "Get Countries",
+          21
+        ],
+        [
+          "GetFilesList",
+          21
+        ],
+        [
+          "Facilities Lookup",
+          21
+        ],
+        [
+          "Autocomplete",
+          21
+        ],
+        [
+          "Country Details",
+          21
+        ],
+        [
+          "Get Languages",
+          21
+        ]
+      ]
+    },
+    "validation": {
+      "examples": 1033,
+      "dialogues": 945,
+      "kinds": {
+        "call": 844,
+        "no_call": 189
+      },
+      "calls_per_answer": {
+        "1": 494,
+        "2": 157,
+        "0": 189,
+        "3": 93,
+        "4": 82,
+        "5": 14,
+        "6": 2,
+        "8": 1,
+        "7": 1
+      },
+      "tools_per_prompt": {
+        "count": 1033,
+        "min": 1,
+        "mean": 3.1181026137463697,
+        "median": 3,
+        "p95": 6,
+        "max": 8,
+        "histogram": [
+          {
+            "left": 0,
+            "right": 1,
+            "count": 0
+          },
+          {
+            "left": 1,
+            "right": 2,
+            "count": 270
+          },
+          {
+            "left": 2,
+            "right": 3,
+            "count": 170
+          },
+          {
+            "left": 3,
+            "right": 4,
+            "count": 199
+          },
+          {
+            "left": 4,
+            "right": 5,
+            "count": 127
+          },
+          {
+            "left": 5,
+            "right": 6,
+            "count": 129
+          },
+          {
+            "left": 6,
+            "right": 7,
+            "count": 113
+          },
+          {
+            "left": 7,
+            "right": 8,
+            "count": 17
+          },
+          {
+            "left": 8,
+            "right": 9,
+            "count": 8
+          }
+        ]
+      },
+      "prompt_tokens": {
+        "count": 1033,
+        "min": 272,
+        "mean": 735.5924491771539,
+        "median": 673,
+        "p95": 1319,
+        "max": 2271,
+        "histogram": [
+          {
+            "left": 0,
+            "right": 114,
+            "count": 0
+          },
+          {
+            "left": 114,
+            "right": 228,
+            "count": 0
+          },
+          {
+            "left": 228,
+            "right": 342,
+            "count": 48
+          },
+          {
+            "left": 342,
+            "right": 456,
+            "count": 123
+          },
+          {
+            "left": 456,
+            "right": 570,
+            "count": 201
+          },
+          {
+            "left": 570,
+            "right": 684,
+            "count": 158
+          },
+          {
+            "left": 684,
+            "right": 798,
+            "count": 137
+          },
+          {
+            "left": 798,
+            "right": 912,
+            "count": 116
+          },
+          {
+            "left": 912,
+            "right": 1026,
+            "count": 82
+          },
+          {
+            "left": 1026,
+            "right": 1140,
+            "count": 64
+          },
+          {
+            "left": 1140,
+            "right": 1254,
+            "count": 31
+          },
+          {
+            "left": 1254,
+            "right": 1368,
+            "count": 27
+          },
+          {
+            "left": 1368,
+            "right": 1482,
+            "count": 15
+          },
+          {
+            "left": 1482,
+            "right": 1596,
+            "count": 13
+          },
+          {
+            "left": 1596,
+            "right": 1710,
+            "count": 10
+          },
+          {
+            "left": 1710,
+            "right": 1824,
+            "count": 3
+          },
+          {
+            "left": 1824,
+            "right": 1938,
+            "count": 2
+          },
+          {
+            "left": 1938,
+            "right": 2052,
+            "count": 2
+          },
+          {
+            "left": 2052,
+            "right": 2166,
+            "count": 0
+          },
+          {
+            "left": 2166,
+            "right": 2280,
+            "count": 1
+          }
+        ]
+      },
+      "reference_tokens": {
+        "count": 1033,
+        "min": 7,
+        "mean": 97.60309777347531,
+        "median": 66,
+        "p95": 275,
+        "max": 662,
+        "histogram": [
+          {
+            "left": 0,
+            "right": 34,
+            "count": 176
+          },
+          {
+            "left": 34,
+            "right": 68,
+            "count": 353
+          },
+          {
+            "left": 68,
+            "right": 102,
+            "count": 148
+          },
+          {
+            "left": 102,
+            "right": 136,
+            "count": 131
+          },
+          {
+            "left": 136,
+            "right": 170,
+            "count": 72
+          },
+          {
+            "left": 170,
+            "right": 204,
+            "count": 49
+          },
+          {
+            "left": 204,
+            "right": 238,
+            "count": 35
+          },
+          {
+            "left": 238,
+            "right": 272,
+            "count": 12
+          },
+          {
+            "left": 272,
+            "right": 306,
+            "count": 18
+          },
+          {
+            "left": 306,
+            "right": 340,
+            "count": 12
+          },
+          {
+            "left": 340,
+            "right": 374,
+            "count": 7
+          },
+          {
+            "left": 374,
+            "right": 408,
+            "count": 6
+          },
+          {
+            "left": 408,
+            "right": 442,
+            "count": 8
+          },
+          {
+            "left": 442,
+            "right": 476,
+            "count": 1
+          },
+          {
+            "left": 476,
+            "right": 510,
+            "count": 0
+          },
+          {
+            "left": 510,
+            "right": 544,
+            "count": 1
+          },
+          {
+            "left": 544,
+            "right": 578,
+            "count": 1
+          },
+          {
+            "left": 578,
+            "right": 612,
+            "count": 1
+          },
+          {
+            "left": 612,
+            "right": 646,
+            "count": 1
+          },
+          {
+            "left": 646,
+            "right": 680,
+            "count": 1
+          }
+        ]
+      },
+      "unique_tool_names": 2571,
+      "top_tool_names": [
+        [
+          "Get Supported Languages",
+          14
+        ],
+        [
+          "Search",
+          10
+        ],
+        [
+          "Facilities Lookup",
+          9
+        ],
+        [
+          "Property Details API",
+          8
+        ],
+        [
+          "Get Property Details",
+          6
+        ],
+        [
+          "Get Address Activities",
+          6
+        ],
+        [
+          "Language Segmenter",
+          6
+        ],
+        [
+          "Chat",
+          6
+        ],
+        [
+          "Career Aptitude Personality Test Questionnaire",
+          6
+        ],
+        [
+          "16 Day Weather Forecast API",
+          5
+        ],
+        [
+          "Generate CPF",
+          5
+        ],
+        [
+          "Get Products",
+          5
+        ],
+        [
+          "reverse",
+          5
+        ],
+        [
+          "Get Categories",
+          5
+        ],
+        [
+          "Get Available Authors",
+          5
+        ],
+        [
+          "Get Domain Details",
+          5
+        ],
+        [
+          "LinkedIn Connections",
+          5
+        ],
+        [
+          "Measure Distance",
+          5
+        ],
+        [
+          "Get Nearest Places Readings",
+          5
+        ],
+        [
+          "Get Pictionary Word",
+          4
+        ]
+      ]
+    }
+  }
+}
