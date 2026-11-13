@@ -6,7 +6,6 @@
   "evaluation_signatures_match": true,
   "best_run": "rl5_no_kl",
   "best_overall": 0.72,
-  "rl7_same_effective_trainer_args_as_rl2": true,
   "data": {
     "train.jsonl": {
       "valid_json_rows": 9415,
@@ -29,8 +28,8 @@
     "train_validation_dialogue_overlap": 0,
     "duplicate_example_ids": 0,
     "split_assignments_match_dialogue_splits": true,
-    "all_13_run_data_manifests_match": true,
-    "eda_counts_and_distributions_match": true
+    "eda_counts_and_distributions_match": true,
+    "all_10_run_data_manifests_match": true
   },
   "adapter_weight_files": [],
   "exported_checkpoints_directory_exists": false,
@@ -39,17 +38,5 @@
     "local_data_retained": true,
     "report_metadata_directory": "report/data"
   },
-  "cleanup": {
-    "removed_items": 64,
-    "removed_bytes": 753360505,
-    "removed_categories": [
-      "training checkpoint directories",
-      "best_adapter directories",
-      "trainer state",
-      "generated model cards",
-      "raw ToolACE copy",
-      "macOS metadata"
-    ],
-    "prepared_train_and_validation_retained": true
-  }
+  "rl7_changes": "none"
 }
