@@ -3,6 +3,7 @@
 !/results/**/
 !/results/spec_p90.png
 !/results/load_sla.png
+!/results/spec-control/summary/latency_vs_rpm.png
 !/results/*/experiment.json
 !/results/*/*/comparison.csv
 !/results/*/*/measurements.csv
