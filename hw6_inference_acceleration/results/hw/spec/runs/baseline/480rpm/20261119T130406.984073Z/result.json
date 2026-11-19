@@ -1,0 +1,17 @@
+{
+  "config": "baseline",
+  "rpm": 480,
+  "run": "spec/runs/baseline/480rpm/20261119T130406.984073Z",
+  "server_log": "spec/servers/baseline/20261119T124059.684666Z/server.log",
+  "status": "ok",
+  "requests_ok": 640,
+  "requests_failed": 0,
+  "send_span_s": 79.874811572,
+  "observed_rpm": 480.00113233994824,
+  "rate_ok": true,
+  "mean_s": 65.95083053743906,
+  "p90_s": 87.7925253235,
+  "request_throughput_rps": 4.330050402608246,
+  "output_tokens_avg": 418.9296875,
+  "usable": true
+}

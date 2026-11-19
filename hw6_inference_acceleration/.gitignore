@@ -1,0 +1,21 @@
+# Keep report artifacts and aggregate measurements.
+/results/**
+!/results/**/
+!/results/spec_p90.png
+!/results/load_sla.png
+!/results/*/experiment.json
+!/results/*/*/comparison.csv
+!/results/*/*/measurements.csv
+!/results/*/*/winners.json
+!/results/*/*/crossover.json
+!/results/*/*/boundary.json
+!/results/**/result.json
+!/results/**/command.txt
+!/results/**/profile/profile_export_aiperf.json
+!/results/**/profile/phase_manifest.json
+
+# CUDA startup error referenced in README.md.
+!/results/hw/spec/servers/draft_qwen3_17b/20261119T141326.673069Z/server.log
+
+# Local repeats from the README examples.
+/results/repeat*/

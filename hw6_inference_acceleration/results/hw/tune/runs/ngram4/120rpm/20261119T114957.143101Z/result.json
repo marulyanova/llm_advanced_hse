@@ -1,0 +1,18 @@
+{
+  "config": "ngram4",
+  "rpm": 120,
+  "run": "tune/runs/ngram4/120rpm/20261119T114957.143101Z",
+  "server_log": "tune/servers/ngram4/20261119T114905.124259Z/server.log",
+  "status": "ok",
+  "requests_ok": 640,
+  "requests_failed": 0,
+  "send_span_s": 319.499755276,
+  "observed_rpm": 120.00009191518778,
+  "rate_ok": true,
+  "mean_s": 8.151361922307812,
+  "p90_s": 12.412378333700001,
+  "request_throughput_rps": 1.9554621197612356,
+  "output_tokens_avg": 419.2734375,
+  "usable": true,
+  "recovered_from_status": "inconclusive"
+}

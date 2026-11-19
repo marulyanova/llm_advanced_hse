@@ -1,0 +1,20 @@
+{
+  "config": "seq512",
+  "rpm": 240,
+  "run": "load/runs/seq512/240rpm/20261119T142119.445050Z",
+  "server_log": "load/servers/seq512/20261119T141427.002094Z/server.log",
+  "status": "fail",
+  "requests_ok": 1199,
+  "requests_failed": 0,
+  "send_span_s": 299.500746177,
+  "observed_rpm": 239.9994020633261,
+  "rate_ok": true,
+  "mean_s": 16.00045823100417,
+  "p90_s": 23.956318630400002,
+  "request_throughput_rps": 3.8747682446554257,
+  "output_tokens_avg": 420.6839032527106,
+  "usable": true,
+  "sla_p90_s": 23.956318630400002,
+  "sla_p90_infinite": false,
+  "sla_status": "fail"
+}

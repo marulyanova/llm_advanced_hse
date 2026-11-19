@@ -1,0 +1,18 @@
+{
+  "config": "baseline",
+  "rpm": 120,
+  "run": "tune/runs/baseline/120rpm/20261119T110529.166474Z",
+  "server_log": "tune/servers/baseline/20261119T110259.124355Z/server.log",
+  "status": "ok",
+  "requests_ok": 640,
+  "requests_failed": 0,
+  "send_span_s": 319.499707221,
+  "observed_rpm": 120.00010996404443,
+  "rate_ok": true,
+  "mean_s": 6.950997479399999,
+  "p90_s": 9.8061179399,
+  "request_throughput_rps": 1.9606629685887036,
+  "output_tokens_avg": 420.4234375,
+  "usable": true,
+  "recovered_from_status": "inconclusive"
+}

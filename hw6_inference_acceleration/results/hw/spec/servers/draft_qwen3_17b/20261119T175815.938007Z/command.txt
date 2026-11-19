@@ -1,0 +1,1 @@
+bash serve.sh --speculative-config '{"method": "draft_model", "model": "Qwen/Qwen3-1.7B", "num_speculative_tokens": 4}' --port 8000

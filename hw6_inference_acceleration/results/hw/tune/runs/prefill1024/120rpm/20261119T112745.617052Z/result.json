@@ -1,0 +1,18 @@
+{
+  "config": "prefill1024",
+  "rpm": 120,
+  "run": "tune/runs/prefill1024/120rpm/20261119T112745.617052Z",
+  "server_log": "tune/servers/prefill1024/20261119T112625.592511Z/server.log",
+  "status": "ok",
+  "requests_ok": 640,
+  "requests_failed": 0,
+  "send_span_s": 319.501132329,
+  "observed_rpm": 119.99957471361994,
+  "rate_ok": true,
+  "mean_s": 6.975188465817187,
+  "p90_s": 9.8551214987,
+  "request_throughput_rps": 1.9603578735877634,
+  "output_tokens_avg": 420.2203125,
+  "usable": true,
+  "recovered_from_status": "inconclusive"
+}

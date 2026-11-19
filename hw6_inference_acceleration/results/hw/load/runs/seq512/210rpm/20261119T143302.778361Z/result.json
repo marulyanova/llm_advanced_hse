@@ -1,0 +1,7 @@
+{
+  "config": "seq512",
+  "rpm": 210,
+  "run": "load/runs/seq512/210rpm/20261119T143302.778361Z",
+  "server_log": "load/servers/seq512/20261119T141427.002094Z/server.log",
+  "status": "interrupted"
+}

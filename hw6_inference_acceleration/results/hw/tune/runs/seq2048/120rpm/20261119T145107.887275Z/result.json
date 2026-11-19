@@ -1,0 +1,17 @@
+{
+  "config": "seq2048",
+  "rpm": 120,
+  "run": "tune/runs/seq2048/120rpm/20261119T145107.887275Z",
+  "server_log": "tune/servers/seq2048/20261119T145001.866298Z/server.log",
+  "status": "ok",
+  "requests_ok": 640,
+  "requests_failed": 0,
+  "send_span_s": 319.499926408,
+  "observed_rpm": 120.00002764019415,
+  "rate_ok": true,
+  "mean_s": 6.854525080254687,
+  "p90_s": 9.71765305,
+  "request_throughput_rps": 1.9604763976806345,
+  "output_tokens_avg": 418.49375,
+  "usable": true
+}

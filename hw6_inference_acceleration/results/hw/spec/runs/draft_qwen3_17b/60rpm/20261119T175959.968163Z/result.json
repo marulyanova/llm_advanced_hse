@@ -1,0 +1,7 @@
+{
+  "config": "draft_qwen3_17b",
+  "rpm": 60,
+  "run": "spec/runs/draft_qwen3_17b/60rpm/20261119T175959.968163Z",
+  "server_log": "spec/servers/draft_qwen3_17b/20261119T175815.938007Z/server.log",
+  "status": "interrupted"
+}

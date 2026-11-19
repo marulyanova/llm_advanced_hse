@@ -1,0 +1,18 @@
+{
+  "config": "seq64",
+  "rpm": 120,
+  "run": "tune/runs/seq64/120rpm/20261119T111257.994899Z",
+  "server_log": "tune/servers/seq64/20261119T111141.971788Z/server.log",
+  "status": "ok",
+  "requests_ok": 640,
+  "requests_failed": 0,
+  "send_span_s": 319.501563093,
+  "observed_rpm": 119.99941292568904,
+  "rate_ok": true,
+  "mean_s": 6.885642140048437,
+  "p90_s": 9.714848397799999,
+  "request_throughput_rps": 1.9604559108966626,
+  "output_tokens_avg": 418.934375,
+  "usable": true,
+  "recovered_from_status": "inconclusive"
+}

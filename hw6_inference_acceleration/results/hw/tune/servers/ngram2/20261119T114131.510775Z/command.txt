@@ -1,0 +1,1 @@
+bash serve.sh --port 8000 --speculative-config '{"method": "ngram", "num_speculative_tokens": 2, "prompt_lookup_min": 2, "prompt_lookup_max": 5}'

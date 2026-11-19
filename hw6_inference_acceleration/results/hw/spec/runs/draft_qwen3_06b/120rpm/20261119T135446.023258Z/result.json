@@ -1,0 +1,17 @@
+{
+  "config": "draft_qwen3_06b",
+  "rpm": 120,
+  "run": "spec/runs/draft_qwen3_06b/120rpm/20261119T135446.023258Z",
+  "server_log": "spec/servers/draft_qwen3_06b/20261119T134041.385435Z/server.log",
+  "status": "ok",
+  "requests_ok": 640,
+  "requests_failed": 0,
+  "send_span_s": 319.500863796,
+  "observed_rpm": 119.9996755704546,
+  "rate_ok": true,
+  "mean_s": 9.73577631485625,
+  "p90_s": 14.9593045082,
+  "request_throughput_rps": 1.9430242473020714,
+  "output_tokens_avg": 419.6046875,
+  "usable": true
+}

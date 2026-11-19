@@ -1,0 +1,1 @@
+bash serve.sh --port 8000 --max-num-seqs 64

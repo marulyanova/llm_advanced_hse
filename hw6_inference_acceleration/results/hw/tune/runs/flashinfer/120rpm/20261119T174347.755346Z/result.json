@@ -1,0 +1,17 @@
+{
+  "config": "flashinfer",
+  "rpm": 120,
+  "run": "tune/runs/flashinfer/120rpm/20261119T174347.755346Z",
+  "server_log": "tune/servers/flashinfer/20261119T174207.725076Z/server.log",
+  "status": "ok",
+  "requests_ok": 640,
+  "requests_failed": 0,
+  "send_span_s": 319.499981587,
+  "observed_rpm": 120.00000691568115,
+  "rate_ok": true,
+  "mean_s": 6.261203722140625,
+  "p90_s": 8.4401596787,
+  "request_throughput_rps": 1.9616817560956792,
+  "output_tokens_avg": 420.703125,
+  "usable": true
+}

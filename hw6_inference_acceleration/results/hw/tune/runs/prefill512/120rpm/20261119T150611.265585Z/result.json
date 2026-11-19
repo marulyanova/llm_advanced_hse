@@ -1,0 +1,17 @@
+{
+  "config": "prefill512",
+  "rpm": 120,
+  "run": "tune/runs/prefill512/120rpm/20261119T150611.265585Z",
+  "server_log": "tune/servers/prefill512/20261119T150453.238256Z/server.log",
+  "status": "ok",
+  "requests_ok": 640,
+  "requests_failed": 0,
+  "send_span_s": 319.499833708,
+  "observed_rpm": 120.00006245712171,
+  "rate_ok": true,
+  "mean_s": 6.8822479986218745,
+  "p90_s": 9.6411566097,
+  "request_throughput_rps": 1.960225589358575,
+  "output_tokens_avg": 420.3015625,
+  "usable": true
+}

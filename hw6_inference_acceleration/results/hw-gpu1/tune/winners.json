@@ -1,0 +1,20 @@
+{
+  "configs": [
+    "baseline",
+    "seq64",
+    "seq512",
+    "prefill1024",
+    "prefill4096",
+    "ngram2",
+    "ngram4",
+    "draft_qwen3_06b",
+    "draft_qwen3_17b",
+    "draft_qwen35_08b"
+  ],
+  "best": "seq512",
+  "spec": "ngram4",
+  "drafts": [
+    "draft_qwen3_06b",
+    "draft_qwen3_17b"
+  ]
+}

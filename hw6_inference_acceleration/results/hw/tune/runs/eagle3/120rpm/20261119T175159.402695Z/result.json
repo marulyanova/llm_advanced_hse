@@ -1,0 +1,17 @@
+{
+  "config": "eagle3",
+  "rpm": 120,
+  "run": "tune/runs/eagle3/120rpm/20261119T175159.402695Z",
+  "server_log": "tune/servers/eagle3/20261119T174959.371612Z/server.log",
+  "status": "ok",
+  "requests_ok": 640,
+  "requests_failed": 0,
+  "send_span_s": 319.499181798,
+  "observed_rpm": 120.00030730670247,
+  "rate_ok": true,
+  "mean_s": 4.890200946528124,
+  "p90_s": 8.022246142700002,
+  "request_throughput_rps": 1.972270774679511,
+  "output_tokens_avg": 420.2453125,
+  "usable": true
+}

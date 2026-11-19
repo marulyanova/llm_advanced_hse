@@ -1,0 +1,47 @@
+{
+  "dataset_sha256": "67c48379e5ae2608f7ca08650fd346facdc01f766a3e8eecea6459d7cec00ebc",
+  "dataset_count": 640,
+  "gpus": [
+    "NVIDIA A100-SXM4-80GB, GPU-c4de1427-10ed-ec94-f2e7-89ad803c3edc, 81920 MiB, 570.86.15"
+  ],
+  "cuda_visible_devices": null,
+  "configs": {
+    "baseline": [],
+    "seq64": [
+      "--max-num-seqs",
+      "64"
+    ],
+    "seq512": [
+      "--max-num-seqs",
+      "512"
+    ],
+    "prefill1024": [
+      "--max-num-batched-tokens",
+      "1024"
+    ],
+    "prefill4096": [
+      "--max-num-batched-tokens",
+      "4096"
+    ],
+    "ngram2": [
+      "--speculative-config",
+      "{\"method\": \"ngram\", \"num_speculative_tokens\": 2, \"prompt_lookup_min\": 2, \"prompt_lookup_max\": 5}"
+    ],
+    "ngram4": [
+      "--speculative-config",
+      "{\"method\": \"ngram\", \"num_speculative_tokens\": 4, \"prompt_lookup_min\": 2, \"prompt_lookup_max\": 5}"
+    ],
+    "draft_qwen3_06b": [
+      "--speculative-config",
+      "{\"method\": \"draft_model\", \"model\": \"Qwen/Qwen3-0.6B\", \"num_speculative_tokens\": 4}"
+    ],
+    "draft_qwen3_17b": [
+      "--speculative-config",
+      "{\"method\": \"draft_model\", \"model\": \"Qwen/Qwen3-1.7B\", \"num_speculative_tokens\": 4}"
+    ],
+    "draft_qwen35_08b": [
+      "--speculative-config",
+      "{\"method\": \"draft_model\", \"model\": \"Qwen/Qwen3.5-0.8B\", \"num_speculative_tokens\": 4}"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "config": "seq512",
+  "highest_passing_rpm": 180,
+  "next_failing_rpm": 183,
+  "bracket_width_rpm": 3,
+  "fail_below_highest_pass": false
+}

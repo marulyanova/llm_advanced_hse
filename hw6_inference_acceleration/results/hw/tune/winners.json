@@ -1,0 +1,33 @@
+{
+  "configs": [
+    "baseline",
+    "seq64",
+    "seq512",
+    "seq1024",
+    "seq2048",
+    "prefill256",
+    "prefill512",
+    "prefill1024",
+    "prefill4096",
+    "flashinfer",
+    "sglang",
+    "ngram2",
+    "ngram4",
+    "draft_qwen3_06b",
+    "draft_qwen3_17b",
+    "draft_qwen35_08b",
+    "eagle3",
+    "suffix"
+  ],
+  "best": "eagle3",
+  "spec": "ngram4",
+  "drafts": [
+    "draft_qwen3_06b",
+    "draft_qwen3_17b"
+  ],
+  "spec_configs": [
+    "draft_qwen3_06b",
+    "draft_qwen3_17b",
+    "eagle3"
+  ]
+}

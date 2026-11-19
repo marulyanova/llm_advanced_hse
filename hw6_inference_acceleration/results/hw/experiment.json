@@ -1,0 +1,82 @@
+{
+  "dataset_sha256": "67c48379e5ae2608f7ca08650fd346facdc01f766a3e8eecea6459d7cec00ebc",
+  "dataset_count": 640,
+  "gpus": [
+    "NVIDIA A100-SXM4-80GB, GPU-284dff89-71c9-cb76-5e24-ec5f9752978d, 81920 MiB, 570.86.15"
+  ],
+  "cuda_visible_devices": null,
+  "configs": {
+    "baseline": [],
+    "seq64": [
+      "--max-num-seqs",
+      "64"
+    ],
+    "seq512": [
+      "--max-num-seqs",
+      "512"
+    ],
+    "prefill1024": [
+      "--max-num-batched-tokens",
+      "1024"
+    ],
+    "prefill4096": [
+      "--max-num-batched-tokens",
+      "4096"
+    ],
+    "ngram2": [
+      "--speculative-config",
+      "{\"method\": \"ngram\", \"num_speculative_tokens\": 2, \"prompt_lookup_min\": 2, \"prompt_lookup_max\": 5}"
+    ],
+    "ngram4": [
+      "--speculative-config",
+      "{\"method\": \"ngram\", \"num_speculative_tokens\": 4, \"prompt_lookup_min\": 2, \"prompt_lookup_max\": 5}"
+    ],
+    "draft_qwen3_06b": [
+      "--speculative-config",
+      "{\"method\": \"draft_model\", \"model\": \"Qwen/Qwen3-0.6B\", \"num_speculative_tokens\": 4}"
+    ],
+    "draft_qwen3_17b": [
+      "--speculative-config",
+      "{\"method\": \"draft_model\", \"model\": \"Qwen/Qwen3-1.7B\", \"num_speculative_tokens\": 4}"
+    ],
+    "draft_qwen35_08b": [
+      "--speculative-config",
+      "{\"method\": \"draft_model\", \"model\": \"Qwen/Qwen3.5-0.8B\", \"num_speculative_tokens\": 4}"
+    ],
+    "seq1024": [
+      "--max-num-seqs",
+      "1024"
+    ],
+    "seq2048": [
+      "--max-num-seqs",
+      "2048"
+    ],
+    "prefill256": [
+      "--max-num-batched-tokens",
+      "256"
+    ],
+    "prefill512": [
+      "--max-num-batched-tokens",
+      "512"
+    ],
+    "flashinfer": [
+      "--attention-backend",
+      "FLASHINFER"
+    ],
+    "sglang": [
+      "--engine",
+      "sglang",
+      "--dtype",
+      "bfloat16",
+      "--enable-metrics"
+    ],
+    "eagle3": [
+      "--speculative-config",
+      "{\"method\": \"eagle3\", \"model\": \"RedHatAI/Qwen3-8B-speculator.eagle3\", \"num_speculative_tokens\": 3}"
+    ],
+    "suffix": [
+      "--speculative-config",
+      "{\"method\": \"suffix\", \"num_speculative_tokens\": 16, \"suffix_decoding_max_cached_requests\": 0}"
+    ]
+  }
+}

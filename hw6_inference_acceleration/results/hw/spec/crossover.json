@@ -1,0 +1,20 @@
+{
+  "ngram_config": "ngram4",
+  "configs": {
+    "ngram4": {
+      "first_slower_rpm": 60,
+      "last_faster_before_rpm": null
+    },
+    "draft_qwen3_06b": {
+      "first_slower_rpm": 60,
+      "last_faster_before_rpm": null
+    },
+    "draft_qwen3_17b": {
+      "first_slower_rpm": null,
+      "last_faster_before_rpm": null
+    }
+  },
+  "server_errors": {
+    "draft_qwen3_17b": "vLLM exited with code 1. See /homework/results/hw/spec/servers/draft_qwen3_17b/20261119T141326.673069Z/server.log"
+  }
+}
