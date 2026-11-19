@@ -122,7 +122,28 @@
 - Для замеров использован `benchmark.sh`. `load_test.sh` задаёт длительность 300 секунд. [benchmark.sh](benchmark.sh) · [load_test.sh](load_test.sh)
 - Для пересчёта нагрузки по временам отправки нужен полный `profile_export.jsonl`. В Git сохранены агрегированные метрики и команды. [.gitignore](.gitignore)
 
-В GPU-контейнере запускаются `python experiments.py --out results/repeat tune` и `python experiments.py --out results/repeat spec`. [Dockerfile](Dockerfile)
+### Базовый запуск
+
+Из каталога задания собирается образ и запускается контейнер. [Dockerfile](Dockerfile)
+
+```bash
+docker build -t hw-inference .
+mkdir -p results
+docker run --rm -it --init --gpus 'device=0' --ipc=host \
+  --mount "type=bind,src=$PWD/results,dst=/homework/results" \
+  -v hw-inference-hf:/root/.cache/huggingface \
+  hw-inference
+```
+
+Внутри контейнера этапы запускаются последовательно.
+
+```bash
+python experiments.py tune
+python experiments.py spec
+python experiments.py load
+```
+
+### Воспроизведение отдельных замеров
 
 Для воспроизведения нагрузки сервер запускается с `bash serve.sh --max-num-seqs 512`, затем в другом терминале выполняются команды.
 
