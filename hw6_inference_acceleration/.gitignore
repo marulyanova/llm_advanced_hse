@@ -17,5 +17,6 @@
 # CUDA startup error referenced in README.md.
 !/results/hw/spec/servers/draft_qwen3_17b/20261119T141326.673069Z/server.log
 
-# Local repeats from the README examples.
+# Local repeats from the README examples and numbered copies of final exports.
 /results/repeat*/
+/results/final-*\ [0-9]*/

@@ -2,14 +2,14 @@
 
 Лучшее ускорение при 120 RPM — **S = 1,551×** с **EAGLE-3 + FlashInfer** при одном спекулятивном токене на шаг. За счёт ускорения декодирования средняя задержка снизилась с **6,951 до 4,481 с** (−35,5%).
 
-При 240 RPM эта конфигурация дала **P90 10,837 с** против **23,562 с** у бейзлайна. В отдельном 300-секундном тесте она выдержала **240 RPM (4 RPS)** с **P90 10,918 с**.
+На всех четырёх проверенных нагрузках от 120 до 960 RPM P90 этой конфигурации ниже, чем у дефолтного vLLM. Максимальная проверенная нагрузка в SLA — **295 RPM (≈4,92 RPS)** с **P90 14,423 с**. При **300 RPM** P90 составил **15,084 с**, выше порога 15 с.
 
 | Этап | Что сделано | Попыток замера | С метриками | Без ошибок запросов |
 | --- | --- | ---: | ---: | ---: |
 | `tune` | Подбор конфигурации при 120 RPM | 18 | 18 | 17 |
-| `spec` | Сравнение P90 при 60–960 RPM | 17 | 16 | 12 |
-| `load` | 300-секундные замеры `seq512` и `eagle3-flashinfer-k1` | 14 | 13 | 12 |
-| **Всего** | | **49** | **47** | **41** |
+| `spec` | Сравнение P90 при 60–960 RPM | 19 | 18 | 14 |
+| `load` | 300-секундные замеры `seq512` и `eagle3-flashinfer-k1` | 16 | 15 | 14 |
+| **Всего** | | **53** | **51** | **45** |
 
 ## Методика
 
@@ -68,9 +68,9 @@
 
 ## 2. Spec — P90 в зависимости от нагрузки
 
-- `eagle3-flashinfer-k1` быстрее дефолтного vLLM на обеих проверенных нагрузках. На **120 RPM** P90 составил **6,552 с** против **9,768 с**, а на **240 RPM** — **10,837 с** против **23,562 с**. Для этой конфигурации переход к проигрышу пока не наблюдался, а нагрузки выше 240 RPM ещё не замерены. Обе серии по 640 запросов завершились без ошибок. [Замер на 120 RPM из tune](results/manual/eagle3-flashinfer-k1-120/profile/profile_export_aiperf.json) · [Замер на 240 RPM](results/spec-quick/eagle3-flashinfer-k1/240rpm/profile/profile_export_aiperf.json)
+- `eagle3-flashinfer-k1` быстрее дефолтного vLLM на всех проверенных нагрузках. На **120 RPM** P90 составил **6,552 с** против **9,768 с**, на **240 RPM** — **10,837 с** против **23,562 с**, на **480 RPM** — **46,521 с** против **87,793 с**, на **960 RPM** — **67,176 с** против **106,815 с**. Все четыре прогона по 640 запросов завершились без ошибок. Относительное снижение P90 достигло 54% на 240 RPM и уменьшилось до 37% на 960 RPM. Перехода к проигрышу на проверенных точках не наблюдалось. Сравнение отражает эффект связки EAGLE-3 и FlashInfer. [120 RPM из tune](results/manual/eagle3-flashinfer-k1-120/profile/profile_export_aiperf.json) · [240 RPM](results/spec-quick/eagle3-flashinfer-k1/240rpm/profile/profile_export_aiperf.json) · [480 RPM](results/final-20261119T201414Z/spec/eagle3-flashinfer-k1/480rpm/profile/profile_export_aiperf.json) · [960 RPM](results/final-20261119T201414Z/spec/eagle3-flashinfer-k1/960rpm/profile/profile_export_aiperf.json)
 - При **60 RPM**, минимальной проверенной нагрузке, P90 у `ngram4` и Qwen3-0.6B уже был выше бейзлайна — **8,965 и 11,345 с** против **7,318 с**. Подготовка и проверка черновых токенов могли перекрыть экономию на декодировании. На 240 RPM разрыв вырос, на 480 и 960 RPM появились таймауты. Переход от выигрыша к проигрышу для этих методов не наблюдался.
-- Для EAGLE-3 без FlashInfer при 120 RPM получен P90 **8,022 с**. Для этой конфигурации есть одна точка из `tune`. [Сравнение P90](results/hw/spec/comparison.csv)
+- Для EAGLE-3 без FlashInfer при 120 RPM получен P90 **8,022 с**. Для этой конфигурации есть одна точка из `tune`. [Замер EAGLE-3](results/hw/tune/runs/eagle3/120rpm/20261119T175159.402695Z/aiperf/profile/profile_export_aiperf.json)
 
 ![P90 E2E в зависимости от RPM для бейзлайна и спекулятивных конфигураций](results/spec_p90.png)
 
@@ -95,6 +95,8 @@
 | `draft_qwen3_06b` | 960 | 71,938 | 112,907 | 373 / 267 † |
 | `draft_qwen3_17b` | 60 | — | — | Прерван |
 | `eagle3-flashinfer-k1` | 240 | 7,169 | 10,837 | 640 / 0 |
+| `eagle3-flashinfer-k1` | 480 | 33,363 | 46,521 | 640 / 0 |
+| `eagle3-flashinfer-k1` | 960 | 51,683 | 67,176 | 640 / 0 |
 
 † Mean и P90 в строках с таймаутами рассчитаны по успешным ответам. Для Qwen3-1.7B зафиксированы ошибка CUDA при старте и прерванный замер на 60 RPM. [Лог ошибки CUDA](results/hw/spec/servers/draft_qwen3_17b/20261119T141326.673069Z/server.log)
 
@@ -102,7 +104,7 @@
 
 ### Лучшая конфигурация из tune
 
-Для `eagle3-flashinfer-k1` нагрузка подавалась **300 секунд** на каждой точке. Самая высокая проверенная нагрузка — **240 RPM (4 RPS)**. На ней **P90 E2E составил 10,918 с**, все 1199 запросов завершились успешно. Граница SLA выше 240 RPM остаётся неизвестной, поскольку при этой конфигурации ещё не замеряли более высокие нагрузки.
+Для `eagle3-flashinfer-k1` нагрузка подавалась **300 секунд** на каждой точке. Максимальная проверенная нагрузка в SLA — **295 RPM (≈4,92 RPS)**. P90 E2E составил **14,423 с**, все 1474 запроса завершились успешно. При **300 RPM (5 RPS)** P90 вырос до **15,084 с**, поэтому SLA нарушен. Граница по измеренным точкам находится между **295 и 300 RPM**.
 
 ![300-секундные нагрузочные замеры EAGLE-3 + FlashInfer и seq512 с порогом SLA 15 секунд](results/load_sla.png)
 
@@ -110,11 +112,13 @@
 | ---: | ---: | ---: | ---: | ---: | --- |
 | 120 | 299,002 | 598 / 1 | 4,477 | 6,671 † | В SLA |
 | 180 | 299,331 | 899 / 0 | 5,437 | 7,948 | В SLA |
-| **240** | 299,500 | 1199 / 0 | 7,300 | **10,918** | В SLA |
+| 240 | 299,500 | 1199 / 0 | 7,300 | 10,918 | В SLA |
+| **295** | 299,593 | 1474 / 0 | 9,808 | **14,423** | В SLA |
+| **300** | 299,798 | 1500 / 0 | 10,118 | **15,084** | Вне SLA |
 
-† На 120 RPM один запрос завершился ошибкой `ServerDisconnectedError`. Для SLA указан скорректированный P90 AIPerf с учётом ошибки. P90 по успешным ответам — **6,654 с**. [120 RPM](results/load-eagle3-flashinfer-k1/120rpm/profile/profile_export_aiperf.json) · [180 RPM](results/load-eagle3-flashinfer-k1/180rpm/profile/profile_export_aiperf.json) · [240 RPM](results/load-eagle3-flashinfer-k1/240rpm/profile/profile_export_aiperf.json)
+† На 120 RPM один запрос завершился ошибкой `ServerDisconnectedError`. Для SLA указан скорректированный P90 AIPerf с учётом ошибки. P90 по успешным ответам — **6,654 с**. [120 RPM](results/load-eagle3-flashinfer-k1/120rpm/profile/profile_export_aiperf.json) · [180 RPM](results/load-eagle3-flashinfer-k1/180rpm/profile/profile_export_aiperf.json) · [240 RPM](results/load-eagle3-flashinfer-k1/240rpm/profile/profile_export_aiperf.json) · [295 RPM](results/final-20261119T201414Z/load/eagle3-flashinfer-k1/295rpm/profile/profile_export_aiperf.json) · [300 RPM](results/final-20261119T201414Z/load/eagle3-flashinfer-k1/300rpm/profile/profile_export_aiperf.json)
 
-При повышении нагрузки со 120 до 240 RPM средний интервал между токенами вырос с 10,31 до 16,90 мс при близкой средней длине ответа. Это согласуется с ростом P90.
+При повышении нагрузки со 120 до 300 RPM средний интервал между токенами вырос с 10,31 до 23,61 мс при близкой средней длине ответа. Это согласуется с ростом P90.
 
 ### Предыдущие замеры seq512
 
@@ -182,10 +186,11 @@ bash serve.sh --attention-backend FLASHINFER \
 В другом терминале можно повторить замер при фиксированном числе запросов и 300-секундные прогоны.
 
 ```bash
-bash benchmark.sh results/repeat/eagle3-flashinfer-k1-120 120
-bash benchmark.sh results/repeat/eagle3-flashinfer-k1-240 240
+for rpm in 120 240 480 960; do
+  bash benchmark.sh "results/repeat/eagle3-flashinfer-k1/${rpm}rpm" "$rpm"
+done
 
-for rpm in 120 180 240; do
+for rpm in 120 180 240 295 300; do
   bash load_test.sh "$rpm" "results/repeat-load/eagle3-flashinfer-k1/${rpm}rpm"
 done
 ```
