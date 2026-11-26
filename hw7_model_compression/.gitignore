@@ -3,25 +3,25 @@
 /artifacts_reproduced*/
 
 # Веса, кеши и промежуточные прогоны хранятся локально.
-/artifacts_compression_hw/**/*.safetensors
-/artifacts_compression_hw/baseline/
-/artifacts_compression_hw/student_trials/
-/artifacts_compression_hw/quantization_logs/
+/artifacts/**/*.safetensors
+/artifacts/baseline/
+/artifacts/student_trials/
+/artifacts/quantization_logs/
 *.log
 
 # Конфиги и индексы выбранных чекпоинтов входят в сдачу.
-!/artifacts_compression_hw/quantized/*/model.safetensors.index.json
-!/artifacts_compression_hw/student_sft/model.safetensors.index.json
-/artifacts_compression_hw/quantized/*/added_tokens.json
-/artifacts_compression_hw/quantized/*/chat_template.jinja
-/artifacts_compression_hw/quantized/*/merges.txt
-/artifacts_compression_hw/quantized/*/special_tokens_map.json
-/artifacts_compression_hw/quantized/*/tokenizer*.json
-/artifacts_compression_hw/quantized/*/vocab.json
-/artifacts_compression_hw/student_sft/added_tokens.json
-/artifacts_compression_hw/student_sft/chat_template.jinja
-/artifacts_compression_hw/student_sft/merges.txt
-/artifacts_compression_hw/student_sft/special_tokens_map.json
-/artifacts_compression_hw/student_sft/tokenizer*.json
-/artifacts_compression_hw/student_sft/training_args.bin
-/artifacts_compression_hw/student_sft/vocab.json
+!/artifacts/quantized/*/model.safetensors.index.json
+!/artifacts/student_sft/model.safetensors.index.json
+/artifacts/quantized/*/added_tokens.json
+/artifacts/quantized/*/chat_template.jinja
+/artifacts/quantized/*/merges.txt
+/artifacts/quantized/*/special_tokens_map.json
+/artifacts/quantized/*/tokenizer*.json
+/artifacts/quantized/*/vocab.json
+/artifacts/student_sft/added_tokens.json
+/artifacts/student_sft/chat_template.jinja
+/artifacts/student_sft/merges.txt
+/artifacts/student_sft/special_tokens_map.json
+/artifacts/student_sft/tokenizer*.json
+/artifacts/student_sft/training_args.bin
+/artifacts/student_sft/vocab.json

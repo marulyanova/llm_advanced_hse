@@ -147,4 +147,4 @@ def print_saved_metrics(artifacts: Path) -> None:
 
 
 if __name__ == "__main__":
-    print_saved_metrics(Path(__file__).resolve().parent / "artifacts_compression_hw")
+    print_saved_metrics(Path(__file__).resolve().parent / "artifacts")

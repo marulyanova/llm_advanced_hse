@@ -42,12 +42,12 @@
 - **Размер группы.** Переход со 128 на 64 у GPTQ на MASSIVE дал наибольший прирост при изменении одного параметра (**+12,30 п.п.** Quality). Размер шардов вырос примерно на 104 MiB.
 - **Метод.** При W4A16, группе 128 и калибровке на MASSIVE AWQ дал **+5,09 п.п.** Quality к GPTQ.
 - **Сглаживание.** У SmoothQuant + GPTQ значение α = 0,5 дало **+0,91 п.п.** Quality к α = 0,8.
-- **Границы сравнения.** Один прогон на конфигурацию. В W4A16 и W8A8 различаются и битность, и рецепт. [Параметры, метрики и размеры шардов](artifacts_compression_hw/quantization_results.csv)
+- **Границы сравнения.** Один прогон на конфигурацию. В W4A16 и W8A8 различаются и битность, и рецепт. [Параметры, метрики и размеры шардов](artifacts/quantization_results.csv)
 
 ## Hard-label дистилляция
 
 - **Модели.** Учитель — Qwen3-32B в BF16. Начальные веса ученика — Qwen3-8B.
-- **Данные для SFT.** По одному ответу учителя на 1 024 запроса train. После фильтрации по схеме JSON осталось 1 003 ответа. Малый прогон использовал первые 128 записей до фильтрации. [Ответы учителя](artifacts_compression_hw/teacher_answers/answers.jsonl)
+- **Данные для SFT.** По одному ответу учителя на 1 024 запроса train. После фильтрации по схеме JSON осталось 1 003 ответа. Малый прогон использовал первые 128 записей до фильтрации. [Ответы учителя](artifacts/teacher_answers/answers.jsonl)
 - **Обучение.** Полное дообучение в BF16, Adafactor, линейный scheduler, gradient checkpointing, батч 1 на GPU, накопление градиентов 8 шагов. Loss считали на токенах ответа учителя.
 
 | Модель или прогон | Ответов запрошено / валидных | Learning rate | Эпохи | Quality | Intent Accuracy | Slot Micro F1 | Frame Exact Match | Valid JSON Rate |
@@ -62,21 +62,21 @@
 - **Размер выборки.** При одинаковых `lr=1e-5` и числе эпох увеличение числа валидных ответов со 126 до 1 003 дало **+7,45 п.п.** Quality.
 - **Ученик и учитель.** Лучший ученик выше на **3,18 п.п.** Quality. У учителя выше Frame Exact Match (0,3047 против 0,3008).
 - **Learning rate.** Прогон с `5e-6` завершил две эпохи. При сохранении весов закончилось место на диске. Оценки на dev нет, влияние learning rate остаётся открытым.
-- **Выбранная модель.** `student_sft` соответствует `student_large_lr1e-5`. [Оценка ученика](artifacts_compression_hw/dev/student_sft_dev.json) · [Таблица завершённых прогонов](artifacts_compression_hw/distillation_completed_trials.csv)
+- **Выбранная модель.** `student_sft` соответствует `student_large_lr1e-5`. [Оценка ученика](artifacts/dev/student_sft_dev.json) · [Таблица завершённых прогонов](artifacts/distillation_completed_trials.csv)
 
 ## Как воспроизвести результаты
 
 - **Пересчёт метрик.** Первая кодовая ячейка ноутбука или `python3 recompute_metrics.py` из каталога работы. Скрипт сверяет пять метрик с сохранёнными результатами. Достаточно стандартной библиотеки Python.
-- **Новый прогон.** Этапы идут по порядку в ноутбуке. Исходный эксперимент использовал две A100 по 80 GB. Новый прогон записывает результаты в `artifacts_reproduced/`. [Ноутбук](homework_compression_student.ipynb) · [Версии окружения](artifacts_compression_hw/environment.json)
+- **Новый прогон.** Этапы идут по порядку в ноутбуке. Исходный эксперимент использовал две A100 по 80 GB. Новый прогон записывает результаты в `artifacts_reproduced/`. [Ноутбук](homework_compression_student.ipynb) · [Версии окружения](artifacts/environment.json)
 - **Параметры запуска.** `USE_MODEL_DEFAULTS = None` восстанавливает режим генерации исходного прогона. `RUN_LR_ABLATION = True` добавляет эксперимент с `lr=5e-6`.
 
 ## Артефакты
 
-| Путь в `artifacts_compression_hw/` | Содержимое |
+| Путь в `artifacts/` | Содержимое |
 | --- | --- |
-| [`dev/`](artifacts_compression_hw/dev) | Метрики и предсказания всех оценённых моделей |
-| [`teacher_answers/answers.jsonl`](artifacts_compression_hw/teacher_answers/answers.jsonl) | 1 024 ответа учителя на train |
-| [`quantized/`](artifacts_compression_hw/quantized) | Конфиги, индексы шардов и рецепты шести конфигураций |
-| [`student_sft/`](artifacts_compression_hw/student_sft) | Конфиги и индекс шардов выбранного ученика |
+| [`dev/`](artifacts/dev) | Метрики и предсказания всех оценённых моделей |
+| [`teacher_answers/answers.jsonl`](artifacts/teacher_answers/answers.jsonl) | 1 024 ответа учителя на train |
+| [`quantized/`](artifacts/quantized) | Конфиги и рецепты шести конфигураций |
+| [`student_sft/`](artifacts/student_sft) | Конфиги и токенизатор выбранного ученика |
 
-Версия для сдачи содержит метаданные чекпоинтов без весов. Полный GPU-прогон сохраняет веса и токенизаторы вместе с оценками.
+Веса всех моделей из завершённых экспериментов сохранены отдельно от репозитория. Для каждой модели веса разбиты на несколько файлов `.safetensors`. Крупные шарды превышают лимит в 100 MiB на файл для обычного Git-репозитория на GitHub. [Лимиты GitHub](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github#file-size-limits)
